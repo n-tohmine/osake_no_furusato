@@ -1,0 +1,1 @@
+# osake_no_furusato
