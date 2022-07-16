@@ -50,3 +50,6 @@
   メイン機能実装：7/14 - 8/21</br>
   β版をRUNTEQ内リリース(MVP)：8/21〆切</br>
   本番リリース：9/7
+
+## ■ 画面遷移図
+  https://www.figma.com/file/dTFlWM1YL6FdvlkjloLYLR/osake_no_furusato?node-id=0%3A1
