@@ -53,3 +53,6 @@
 
 ## ■ 画面遷移図
   https://www.figma.com/file/dTFlWM1YL6FdvlkjloLYLR/osake_no_furusato?node-id=0%3A1
+
+## ■ ER図
+  https://app.diagrams.net/#G1JIX66lvmo5c4tBlxh5iXga8ZugkIbhXg
