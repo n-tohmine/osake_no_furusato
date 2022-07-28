@@ -89,6 +89,9 @@ group :development, :test do
   # Email
   gem 'letter_opener_web'
   gem 'net-smtp'
+  gem 'net-imap'
+  gem 'net-pop'
+
 end
 
 group :development do
