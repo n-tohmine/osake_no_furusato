@@ -102,7 +102,6 @@ group :development do
   gem 'spring'
   # For easily check schema and routing info
   gem 'annotate'
-  gem 'migration_comments'
   # Check N+1
   gem 'bullet'
   # Lint check, code analyze
