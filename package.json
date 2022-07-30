@@ -12,6 +12,8 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "postcss-cli": "^10.0.0",
     "webpack-dev-server": "^3"
   }
+
 }
