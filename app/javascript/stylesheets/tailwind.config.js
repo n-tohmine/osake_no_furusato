@@ -8,14 +8,11 @@ module.exports = {
   ],
   content: [],
   theme: {
-    extend: {},
-    backgroundSize: {
-      'auto': 'auto',
-      'cover': 'cover',
-      'contain': 'contain',
-      '50%': '50%',
-      '16': '4rem',
+    extend: {
+      backgroundImage: (theme) => ({
+        'top-image': "url('../../assets/images/top.jpg')",
+      }),
     },
   },
   plugins: [],
-}
+};
