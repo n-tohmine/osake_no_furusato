@@ -44,7 +44,6 @@ gem 'sitemap_generator'
 
 # Configuration
 gem 'config'
-gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 # Search
 gem 'ransack'
