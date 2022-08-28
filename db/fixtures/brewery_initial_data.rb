@@ -13,7 +13,7 @@ csv.each do |brewery|
   latitude = brewery[7]
   longitude = brewery[8]
   place_id = brewery[9]
-  image = brewery[10]
+  photo_reference = brewery[10]
 
   Brewery.seed do |s|
     s.id = id
@@ -26,7 +26,6 @@ csv.each do |brewery|
     s.latitude = latitude
     s.longitude = longitude
     s.place_id = place_id
-    s.image = image
+    s.photo_reference = photo_reference
   end
 end
-
