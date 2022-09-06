@@ -60,6 +60,7 @@ gem 'mini_magick'
 gem 'carrierwave', '~> 2.0'
 gem 'carrierwave-i18n'
 gem 'fog-aws'
+gem 'aws-sdk-s3', require: false
 
 # For googlemap
 gem 'gmaps4rails'
