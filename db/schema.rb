@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_05_142104) do
+ActiveRecord::Schema.define(version: 2022_09_10_100516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_09_05_142104) do
   create_table "breweries", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "prefecture"
     t.integer "liquor_type"
     t.string "website_url"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2022_09_05_142104) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "place_id"
     t.string "photo_reference"
+    t.string "image"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
