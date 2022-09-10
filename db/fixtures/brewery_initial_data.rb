@@ -3,7 +3,6 @@ require 'csv'
 csv = CSV.read('db/fixtures/brewery_initial_data.csv')
 
 csv.each do |brewery|
-  # id = brewery[0]
   name = brewery[0]
   address = brewery[1]
   phone_number = brewery[2]
@@ -16,7 +15,6 @@ csv.each do |brewery|
   photo_reference = brewery[9]
 
   Brewery.seed do |s|
-    # s.id = id
     s.name = name
     s.address = address
     s.phone_number  = phone_number
