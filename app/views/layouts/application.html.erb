@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>お酒のふるさと</title>
+    <title><%= page_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,10 +12,12 @@
     <link href="../../assets/stylesheets/search_from_japanmap.scss" rel="stylesheet" type="text/scss">
   </head>
 
-  <body>
-
-      <%= render partial: "shared/header" %>
+  <body class="flex flex-col min-h-screen">
+      <%= render partial: "shared/header"  %>
+      <main class="flex-grow">
       <%= yield %>
+      </main>
       <%= render partial: "shared/footer" %>
+      <script src="../path/to/flowbite/dist/flowbite.js"></script>
   </body>
 </html>
