@@ -1,0 +1,21 @@
+<%= search_form_for @q, url: url do |f| %>
+  <div class="m-10">
+    <div class="relative flex mb-4">
+      <%= f.search_field :name_or_address_cont, class: "w-3/5 mr-8 p-4 pl-10 text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "醸造所名/住所を入力してください" %>
+      <span class="flex mr-6 mt-4 font-bold text-lg">×</span>
+      <%= f.select :liquor_type_eq,
+            Brewery.liquor_types_i18n.invert.map{|key, value| [key, Brewery.liquor_types[value]]},
+            { include_blank: "指定なし"},
+            { class: "w-1/4 mr-8 p-4 pl-10 text-base bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 cursor-pointer" }
+      %>
+
+      <%# <% Brewery.liquor_types_i18n.each do |key, value| %>
+        <%# <%= f.label "liquor_type_eq_any_#{key}" do %> 
+        <%# <%= f.check_box :liquor_type_eq_any, { multiple: true, include_hidden: false }, key %> 
+        <%# < class="ml-2 text-lg font-medium text-gray-900 dark:text-gray-300"><%= value %>
+        <%# <% end %> 
+      <%# <% end %> 
+      <%= f.submit '検  索', class: "text-gray-700 right-2.5 bottom-2.5 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-blue-500 focus:border-blue-500  font-base rounded-lg border-gray-300 text-base px-10 py-4 cursor-pointer" %> 
+    </div>
+  </div>
+<% end %>

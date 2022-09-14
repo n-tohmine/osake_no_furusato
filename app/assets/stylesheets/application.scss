@@ -1,3 +1,32 @@
 @import 'search_from_japanmap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+.pagination{
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: center;
+  span{
+      text-align: center;
+      width: 50px;
+      :hover{
+          background-color:#f3f3f3;
+      }
+      a{
+          display: block;
+          width: 100%;
+          height: 100%;
+          :hover{
+              background-color: #f3f3f3;
+            }
+      }
+  }
+}
+
+.current{
+  color: #008CFF;
+}
+
+.gap{
+  background-color: white !important;
+}
