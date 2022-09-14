@@ -4,6 +4,13 @@ ja:
       role:
         general: '一般'
         admin: '管理者'
+        brewery:
+    brewery:
+      liquor_type:
+        beer: '🍺ビール'
+        wine: '🍷ワイン'
+        sake: '🍶日本酒'
+        whiskey: '🥃ウイスキー' 
   activerecord:
     models:
       # view→User.model_name.human => "ユーザー" / t("activerecord.models.user")
