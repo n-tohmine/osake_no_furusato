@@ -1,284 +1,188 @@
 <% content_for :title, '場所から探す' %>
 <div class="h-screen w-screen bg-yellow-200 bg-cover">
-  <h1 class="pt-16 pl-10 text-gray-600 text-base font-semibold sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl underline">🚅気になる都道府県をクリックしてください🍻✨</h1>
+  <h1 class="pt-16 pl-10 text-gray-600 text-base font-semibold sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl">✈️ 気になる都道府県をクリックしてください 🍻✨</h1>
   <div class="pt-14">
     <div id="japan-map" class="clearfix">
     <div id="hokkaido-touhoku" class="clearfix">
       <p class="area-title">北海道・東北</p>
       <div class="area">
-        <a href="#">
-          <div id="hokkaido">
-            <p>北海道</p>
-            <%# <%= link_to "北海道", breweries_path(q: { prefecture_eq: "北海道" }) %> 
-            <%# <%= link_to "北海道", breweries_path(q: { prefecture_eq: "北海道" }), class: 'simple-a-tag' do クラスつけるならdo-endになる %>
-          </div>
-        </a>
-        <a href="#">
-          <div id="aomori">
-            <p>青森</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="akita">
-            <p>秋田</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="iwate">
-            <p>岩手</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="yamagata">
-            <p>山形</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="miyagi">
-            <p>宮城</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="fukushima">
-            <p>福島</p>
-          </div>
-        </a>
+        <div id="hokkaido">
+          <%= link_to "北海道", breweries_path(q: { prefecture_eq: "北海道" }) %>
+        </div>
+        <div id="aomori">
+          <%= link_to "青森", breweries_path(q: { prefecture_eq: "青森県" }) %>
+        </div>
+        <div id="akita">
+          <%= link_to "秋田", breweries_path(q: { prefecture_eq: "秋田県" }) %>
+        </div>
+        <div id="iwate">
+          <%= link_to "岩手", breweries_path(q: { prefecture_eq: "岩手県" }) %>
+        </div>
+        <div id="yamagata">
+          <%= link_to "山形", breweries_path(q: { prefecture_eq: "山形県" }) %>
+        </div>
+        <div id="miyagi">
+          <%= link_to "宮城", breweries_path(q: { prefecture_eq: "宮城県" }) %>
+        </div>
+        <div id="fukushima">
+          <%= link_to "福島", breweries_path(q: { prefecture_eq: "福島県" }) %>
+        </div>
       </div>
     </div>
 
     <div id="kantou">
       <p class="area-title">関東</p>
       <div class="area">
-        <a href="#">
-          <div id="gunma">
-            <p>群馬</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="tochigi">
-            <p>栃木</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="ibaraki">
-            <p>茨城</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="saitama">
-            <p>埼玉</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="chiba">
-            <p>千葉</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="tokyo">
-            <p>東京</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="kanagawa">
-            <p>神奈川</p>
-          </div>
-        </a>
+        <div id="gunma">
+          <%= link_to "群馬", breweries_path(q: { prefecture_eq: "群馬県" }) %>
+        </div>
+        <div id="tochigi">
+          <%= link_to "栃木", breweries_path(q: { prefecture_eq: "栃木県" }) %>
+        </div>
+        <div id="ibaraki">
+          <%= link_to "茨城", breweries_path(q: { prefecture_eq: "茨城県" }) %>
+        </div>
+        <div id="saitama">
+          <%= link_to "埼玉", breweries_path(q: { prefecture_eq: "埼玉県" }) %>
+        </div>
+        <div id="chiba">
+          <%= link_to "千葉", breweries_path(q: { prefecture_eq: "千葉県" }) %>
+        </div>
+        <div id="tokyo">
+          <%= link_to "東京", breweries_path(q: { prefecture_eq: "東京県" }) %>
+        </div>
+        <div id="kanagawa">
+          <%= link_to "神奈川", breweries_path(q: { prefecture_eq: "神奈川県" }) %>
+        </div>
       </div>
     </div>
 
     <div id="tyubu" class="clearfix">
       <p class="area-title">中部</p>
       <div class="area">
-        <a href="#">
-          <div id="nigata">
-            <p>新潟</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="toyama">
-            <p>富山</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="ishikawa">
-            <p>石川</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="fukui">
-            <p>福井</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="nagano">
-            <p>長野</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="gifu">
-            <p>岐阜</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="yamanashi">
-            <p>山梨</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="aichi">
-            <p>愛知</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="shizuoka">
-            <p>静岡</p>
-          </div>
-        </a>
+        <div id="nigata">
+          <%= link_to "新潟", breweries_path(q: { prefecture_eq: "新潟県" }) %>
+        </div>
+        <div id="toyama">
+          <%= link_to "富山", breweries_path(q: { prefecture_eq: "富山県" }) %>
+        </div>
+        <div id="ishikawa">
+          <%= link_to "石川", breweries_path(q: { prefecture_eq: "石川県" }) %>
+        </div>
+        <div id="fukui">
+          <%= link_to "福井", breweries_path(q: { prefecture_eq: "福井県" }) %>
+        </div>
+        <div id="nagano">
+          <%= link_to "長野", breweries_path(q: { prefecture_eq: "長野県" }) %>
+        </div>
+        <div id="gifu">
+          <%= link_to "岐阜", breweries_path(q: { prefecture_eq: "岐阜県" }) %>
+        </div>
+        <div id="yamanashi">
+          <%= link_to "山梨", breweries_path(q: { prefecture_eq: "山梨県" }) %>
+        </div>
+        <div id="aichi">
+          <%= link_to "愛知", breweries_path(q: { prefecture_eq: "愛知県" }) %>
+        </div>
+        <div id="shizuoka">
+          <%= link_to "静岡", breweries_path(q: { prefecture_eq: "静岡県" }) %>
+        </div>
       </div>
     </div>
 
     <div id="kinki" class="clearfix">
       <p class="area-title">近畿</p>
       <div class="area">
-        <a href="#">
-          <div id="kyoto">
-            <p>京都</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="shiga">
-            <p>滋賀</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="osaka">
-            <p>大阪</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="nara">
-            <p>奈良</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="mie">
-            <p>三重</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="wakayama">
-            <p>和歌山</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="hyougo">
-            <p>兵庫</p>
-          </div>
-        </a>
+        <div id="kyoto">
+          <%= link_to "京都", breweries_path(q: { prefecture_eq: "京都府" }) %>
+        </div>
+        <div id="shiga">
+          <%= link_to "滋賀", breweries_path(q: { prefecture_eq: "滋賀県" }) %>
+        </div>
+        <div id="osaka">
+          <%= link_to "大阪", breweries_path(q: { prefecture_eq: "大阪府" }) %>
+        </div>
+        <div id="nara">
+          <%= link_to "奈良", breweries_path(q: { prefecture_eq: "奈良県" }) %>
+        </div>
+        <div id="mie">
+          <%= link_to "三重", breweries_path(q: { prefecture_eq: "三重県" }) %>
+        </div>
+        <div id="wakayama">
+          <%= link_to "和歌山", breweries_path(q: { prefecture_eq: "和歌山県" }) %>
+        </div>
+        <div id="hyougo">
+          <%= link_to "兵庫", breweries_path(q: { prefecture_eq: "兵庫県" }) %>
+        </div>
       </div>
     </div>
 
     <div id="tyugoku" class="clearfix">
       <p class="area-title">中国</p>
       <div class="area">
-        <a href="#">
-          <div id="tottori">
-            <p>鳥取</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="okayama">
-            <p>岡山</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="shimane">
-            <p>島根</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="hiroshima">
-            <p>広島</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="yamaguchi">
-            <p>山口</p>
-          </div>
-        </a>
+        <div id="tottori">
+          <%= link_to "鳥取", breweries_path(q: { prefecture_eq: "鳥取県" }) %>
+        </div>
+        <div id="okayama">
+          <%= link_to "岡山", breweries_path(q: { prefecture_eq: "岡山県" }) %>
+        </div>
+        <div id="shimane">
+          <%= link_to "島根", breweries_path(q: { prefecture_eq: "島根県" }) %>
+        </div>
+        <div id="hiroshima">
+          <%= link_to "広島", breweries_path(q: { prefecture_eq: "広島県" }) %>
+        </div>
+        <div id="yamaguchi">
+          <%= link_to "山口", breweries_path(q: { prefecture_eq: "山口県" }) %>
+        </div>
       </div>
     </div>
 
     <div id="shikoku" class="clearfix">
       <p class="area-title">四国</p>
       <div class="area">
-        <a href="#">
-          <div id="kagawa">
-            <p>香川</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="ehime">
-            <p>愛媛</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="tokushima">
-            <p>徳島</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="kouchi">
-            <p>高知</p>
-          </div>
-        </a>
+        <div id="kagawa">
+          <%= link_to "香川", breweries_path(q: { prefecture_eq: "香川県" }) %>
+        </div>
+        <div id="ehime">
+          <%= link_to "愛媛", breweries_path(q: { prefecture_eq: "愛媛県" }) %>
+        </div>
+        <div id="tokushima">
+          <%= link_to "徳島", breweries_path(q: { prefecture_eq: "徳島県" }) %>
+        </div>
+        <div id="kouchi">
+          <%= link_to "高知", breweries_path(q: { prefecture_eq: "高知県" }) %>
+        </div>
       </div>
     </div>
 
     <div id="kyusyu" class="clearfix">
       <p class="area-title">九州・沖縄</p>
       <div class="area">
-        <a href="#">
-          <div id="fukuoka">
-            <p>福岡</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="saga">
-            <p>佐賀</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="nagasaki">
-            <p>長崎</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="oita">
-            <p>大分</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="kumamoto">
-            <p>熊本</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="miyazaki">
-            <p>宮崎</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="kagoshima">
-            <p>鹿児島</p>
-          </div>
-        </a>
-        <a href="#">
-          <div id="okinawa">
-            <p>沖縄</p>
-          </div>
-        </a>
+        <div id="fukuoka">
+          <%= link_to "福岡", breweries_path(q: { prefecture_eq: "福岡県" }) %>
+        </div>
+        <div id="saga">
+          <%= link_to "佐賀", breweries_path(q: { prefecture_eq: "佐賀県" }) %>
+        </div>
+        <div id="nagasaki">
+          <%= link_to "長崎", breweries_path(q: { prefecture_eq: "長崎県" }) %>
+        </div>
+        <div id="oita">
+          <%= link_to "大分", breweries_path(q: { prefecture_eq: "大分県" }) %>
+        </div>
+        <div id="kumamoto">
+          <%= link_to "熊本", breweries_path(q: { prefecture_eq: "熊本県" }) %>
+        </div>
+        <div id="miyazaki">
+          <%= link_to "宮崎", breweries_path(q: { prefecture_eq: "宮崎県" }) %>
+        </div>
+        <div id="kagoshima">
+          <%= link_to "鹿児島", breweries_path(q: { prefecture_eq: "鹿児島県" }) %>
+        </div>
+        <div id="okinawa">
+          <%= link_to "沖縄", breweries_path(q: { prefecture_eq: "沖縄県" }) %>
+        </div>
       </div>
     </div>
     </div><!-- japan-map -->
