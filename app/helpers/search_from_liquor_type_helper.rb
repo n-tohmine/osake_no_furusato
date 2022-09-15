@@ -1,0 +1,2 @@
+module SearchFromLiquorTypeHelper
+end
