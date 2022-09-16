@@ -50,13 +50,13 @@ ActiveRecord::Schema.define(version: 2022_09_10_100516) do
     t.string "prefecture"
     t.integer "liquor_type"
     t.string "website_url"
+    t.string "photo_reference"
     t.string "video_id"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "place_id"
-    t.string "photo_reference"
     t.string "image"
   end
 
