@@ -5,7 +5,7 @@ class BreweriesController < ApplicationController
   end
 
   def show
-    @brewery = Brewery.find(id[:params])
+    @brewery = Brewery.find(params[:id])
     @longitude = @brewery.longitude
     @latitude = @brewery.latitude
   end

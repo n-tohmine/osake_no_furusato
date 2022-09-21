@@ -1,2 +1,37 @@
-<h1>Breweries#show</h1>
-<p>Find me in app/views/breweries/show.html.erb</p>
+<% content_for :title, @brewery.name %>
+<div class="flex md:flex-row md:max-w-full mx-6 my-12">
+  <%= image_tag "#{@brewery.image}", class: "object-contain shadow-lg w-full h-96 rounded-lg md:h-auto md:w-auto" %>
+</div>
+<div class="overflow-x-auto relative shadow-xl sm:rounded-lg mx-6 my-12">
+  <table class="w-full text-lg text-left text-gray-500">
+    <tbody>
+      <tr class="bg-amber-100">
+        <th scope="row" class="py-4 px-6 whitespace-nowrap"><%= Brewery.human_attribute_name :name %>:</th>
+        <td><%= @brewery.name %></td>
+      </tr>
+      <tr class="bg-gray-50">
+        <th scope="row" class="py-4 px-6 whitespace-nowrap"><%= Brewery.human_attribute_name :liquor_type %>:</th>
+        <td><%= @brewery.liquor_type_i18n %></td>
+      </tr>
+      <tr class="bg-amber-100">
+        <th scope="row" class="py-4 px-6 whitespace-nowrap">
+          <%= Brewery.human_attribute_name :address %>:
+        </th>
+        <td><%= @brewery.address.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z') %></td>
+      </tr>
+      <tr class="bg-gray-50">
+        <th scope="row" class="py-4 px-6 whitespace-nowrap">
+        <%= Brewery.human_attribute_name :phone_number %>:
+        </th>
+        <td><%= @brewery.phone_number.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z')  %></td>
+      </tr>
+      <tr class="bg-amber-100">
+        <th scope="row" class="py-4 px-6 whitespace-nowrap">
+        <%= Brewery.human_attribute_name :website_url %>:
+        </th>
+        <td><%= link_to @brewery.website_url, "#{@brewery.website_url}" %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
