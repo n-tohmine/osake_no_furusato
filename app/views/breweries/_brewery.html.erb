@@ -1,4 +1,5 @@
-<a href="#" class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full mx-6 my-6 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+<%= link_to brewery_path(brewery) do %>
+  <div class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full mx-6 my-6 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
     <% if brewery.image %>
       <%= image_tag "#{brewery.image}", class: "object-contain w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" %>
     <% else %>
@@ -6,9 +7,9 @@
     <% end %>
     <div class="flex flex-col justify-between p-4 leading-normal">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 dark:text-white"><%= brewery.name %></h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= brewery.address %></p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= brewery.address.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z')  %></p>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">お酒の種類：<%= brewery.liquor_type_i18n %></p>
         <%# ユーザー登録機能作成後お気に入り・気になるアイコンをつける %>
     </div>
-</a>
-
+  </div>
+<% end %>
