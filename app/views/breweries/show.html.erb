@@ -1,9 +1,9 @@
 <% content_for :title, @brewery.name %>
-<div class="flex md:flex-row md:max-w-full mx-6 my-12">
+<div class="flex h-72 md:flex-row md:max-w-full mx-6 my-12">
   <%= image_tag "#{@brewery.image}", class: "object-contain shadow-lg w-full h-96 rounded-lg md:h-auto md:w-auto" %>
 </div>
 <div class="overflow-x-auto relative shadow-xl sm:rounded-lg mx-6 my-12">
-  <table class="w-full text-lg text-left text-gray-500">
+  <table class="w-full text-lg text-left text-gray-600">
     <tbody>
       <tr class="bg-amber-100">
         <th scope="row" class="py-4 px-6 whitespace-nowrap"><%= Brewery.human_attribute_name :name %>:</th>

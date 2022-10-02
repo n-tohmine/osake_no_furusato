@@ -2,14 +2,13 @@
 
 <%= render 'shared/search_form', url: breweries_path %>
 
-  <div class="row">
-    <div class="col-12 mx-10">
-      <% if @breweries.present? %>
-        <%= render @breweries %>
-      <% else %>
-        <p class="text-center text-lg bg-cyan-400">⚠︎該当する醸造所が見つかりませんでした。</p>       
-      <% end %>
-
-      <%= paginate @breweries %>
-    </div>
+<div class="row">
+  <div class="col-12 mx-10">
+    <% if @breweries.present? %>
+      <%= render @breweries %>
+    <% else %>
+      <p class="text-center text-lg bg-cyan-400">⚠︎該当する醸造所が見つかりませんでした。</p>       
+    <% end %>
+    <%= paginate @breweries %>
   </div>
+</div>

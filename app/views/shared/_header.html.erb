@@ -1,29 +1,25 @@
-<nav class="flex items-center justify-between flex-wrap bg-yellow-400 p-5">
-  <div class="flex items-center flex-shrink-0 text-white mr-6">
-    <%# <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg> %>
+<nav class="bg-yellow-400 px-3.5 py-2">
+  <div class="container flex flex-wrap justify-between items-center">
     <%= link_to root_path do %>
     <span class="font-semibold text-xl tracking-tight rounded-md hover:text-white first-line:">お酒のふるさと</span>
     <% end %>
-  </div>
+  
+    <button data-collapse-toggle="navbar-default" type="button" class="flex-row-reverse inline-flex items-center p-2 ml-3 text-sm text-gray-100 rounded-lg md:hidden hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
+      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+    </button>
 
-    <%# <div class="block lg:hidden">
-      <button class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-stone-500 hover:border-stone-500">
-      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>メニュー</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-      </button>
-    </div> %>
-
-  <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
-    <div class="text-sm lg:flex-grow">
-      <%= link_to "醸造所検索", breweries_path, class: "text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-
-      <a href="#responsive-header" class="text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-        ログイン
-      </a>
-      <a href="#responsive-header" class="text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-        ユーザー登録
-      </a>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="flex flex-col p-2 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium md:border-0">
+        <li>
+          <%= link_to "醸造所検索", breweries_path, class:"block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+        </li>
+        <li>
+          <a href="#" class="block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-medium">ログイン</a>
+        </li>
+        <li>
+          <a href="#" class="block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-medium">ユーザー登録</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
-
-
