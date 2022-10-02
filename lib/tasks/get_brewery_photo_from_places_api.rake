@@ -1,3 +1,6 @@
+require 'open-uri'
+require "csv"
+
 namespace :get_brewery_photo_from_places_api do
   desc "PlacesAPIからbreweryの写真を取得、DB保存"
   task brewery_photo: :environment do

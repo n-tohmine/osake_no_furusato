@@ -19,17 +19,27 @@
         </th>
         <td><%= @brewery.address.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z') %></td>
       </tr>
+      
       <tr class="bg-gray-50">
         <th scope="row" class="py-4 px-6 whitespace-nowrap">
         <%= Brewery.human_attribute_name :phone_number %>:
         </th>
-        <td><%= @brewery.phone_number.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z')  %></td>
+        <% if @brewery.phone_number %>
+        <td><%= @brewery.phone_number.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z') %></td>
+        <% else %>
+        <td>不明</td>
+        <% end %>
       </tr>
+      
       <tr class="bg-amber-100">
         <th scope="row" class="py-4 px-6 whitespace-nowrap">
         <%= Brewery.human_attribute_name :website_url %>:
         </th>
+        <% if @brewery.website_url %>
         <td><%= link_to @brewery.website_url, "#{@brewery.website_url}" %></td>
+        <% else %>
+        <td>不明</td>
+        <% end %>
       </tr>
     </tbody>
   </table>

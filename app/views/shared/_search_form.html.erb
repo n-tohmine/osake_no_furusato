@@ -1,7 +1,7 @@
 <%= search_form_for @q, url: url do |f| %>
   <div class="p-10">
     <div class="mb-14">
-      <%= f.search_field :name_or_address_cont, class: "w-4/6 mr-8 p-4 pl-10 text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500", placeholder: "醸造所名、住所等のキーワードを入力してください。" %>
+      <%= f.search_field :name_or_address_cont, class: "w-4/6 mr-8 p-4 pl-10 text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500", placeholder: "キーワード検索" %>
       
       <%= f.select :liquor_type_eq,
             Brewery.liquor_types_i18n.invert.map{|key, value| [key, Brewery.liquor_types[value]]},
