@@ -452,92 +452,92 @@ a:hover {
 /****************************************
 	レスポンシブ
 ****************************************/
-// @media screen and (max-width: 776px) {
-// #japan-map {
-// 	display: flex;
-// 	width: 100%;
-// 	flex-wrap: wrap;
-// 	justify-content: space-around;
-// }
-// #japan-map p.area-title {
-// 	display: inline-block;
-// 	width: 100%;
-// 	font-size: 15px;
-// 	text-align: center;
-// 	margin-top: 1.5em;
-// 	margin-bottom: 1em;
-// 	color: #000000;
-// }
-// #hokkaido-touhoku, #kantou, #chubu, #kinki, #chugoku, #shikoku, #kyusyu {
-// 	display: block;
-// 	position: static;
-// 	margin: 0 1em 0 1em;
-// }
-// #japan-map div div.area {
-// 	display: block;
-// 	position: relative;
-// }
+@media screen and (max-width: 776px) {
+#japan-map {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+#japan-map p.area-title {
+	display: inline-block;
+	width: 100%;
+	font-size: 15px;
+	text-align: center;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	color: #000000;
+}
+#hokkaido-touhoku, #kantou, #chubu, #kinki, #chugoku, #shikoku, #kyusyu {
+	display: block;
+	position: static;
+	margin: 0 1em 0 1em;
+}
+#japan-map div div.area {
+	display: block;
+	position: relative;
+}
 
-// #hokkaido-touhoku {
-// 	height: calc(265px + 4.5em);
-// }
-// #kantou {
-// 	height: calc(174px + 4.5em);
-// }
-// #chubu {
-// 	height: calc(211px + 4.5em);
-// }
-// #kinki {
-// 	height: calc(211px + 4.5em);
-// }
-// #chugoku {
-// 	height: calc(98px + 4.5em);
-// }
-// #shikoku {
-// 	height: calc(84px + 4.5em);
-// }
-// #kyusyu {
-// 	height: calc(247px + 4.5em);
-// }
+#hokkaido-touhoku {
+	height: calc(265px + 4.5em);
+}
+#kantou {
+	height: calc(174px + 4.5em);
+}
+#chubu {
+	height: calc(211px + 4.5em);
+}
+#kinki {
+	height: calc(211px + 4.5em);
+}
+#chugoku {
+	height: calc(98px + 4.5em);
+}
+#shikoku {
+	height: calc(84px + 4.5em);
+}
+#kyusyu {
+	height: calc(247px + 4.5em);
+}
 
-// } /* レスポンシブ max-776px */
-
-
-
-// @media screen and (max-width: 500px) {
-// #japan-map {
-// 	display: block;
-// 	width: 100%;
-// 	height: auto;
-// }
-// #hokkaido-touhoku, #kantou, #chubu, #kinki, #chugoku, #shikoku, #kyusyu {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	width: 100%;
-// 	height: auto;
-// 	position: static;
-// 	margin-left: 0px;
-// 	margin-right: 0px;
-// }
-// #japan-map div div.area {
-// 	font-size: 14px;
-//  	display: flex;
-// 	flex-wrap: wrap;
-// 	width: 100%;
-// }
-// #japan-map div div.area a {
-// 	height: auto;
-// 	width: 25%;
-// }
-// #japan-map div div.area div {
-//  	display: block;
-// 	border-radius: 0px;
-// 	position: static;
-// 	height: auto;
-// 	font-size: 16px;
-// 	width: 100%;
-// 	padding: 0.5em 0.3em 0.5em 0.3em;
-// }
+} /* レスポンシブ max-776px */
 
 
-// } /* レスポンシブ max-500px */
+
+@media screen and (max-width: 500px) {
+#japan-map {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+#hokkaido-touhoku, #kantou, #chubu, #kinki, #chugoku, #shikoku, #kyusyu {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: auto;
+	position: static;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#japan-map div div.area {
+	font-size: 14px;
+ 	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+#japan-map div div.area a {
+	height: auto;
+	width: 25%;
+}
+#japan-map div div.area div {
+ 	display: block;
+	border-radius: 0px;
+	position: static;
+	height: auto;
+	font-size: 16px;
+	width: 100%;
+	padding: 0.5em 0.3em 0.5em 0.3em;
+}
+
+
+} /* レスポンシブ max-500px */
