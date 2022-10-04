@@ -1,7 +1,7 @@
 <div class="h-screen w-screen relative bg-center bg-cover bg-top-image bg-no-repeat">
   <div class="absolute w-full translate-y--2/4 translate-x--2/4">
     <p class="text-gray-700 text-base text-center px-6 bg-yellow-200 font-semibold leading-relaxed">※新型コロナウイルスの影響により工場見学を中止している醸造所がございます。</br>必ずホームページ等で最新の実施状況をご確認ください。</p> 
-    <div class="text-2xl sm:text-4xl md:text-5xl  lg:text-5xl xl:text-5xl">
+    <div class="text-3xl sm:text-4xl md:text-5xl  lg:text-5xl xl:text-5xl mt-8">
       <p class="text-orange-600 text-opacity-75 text-center py-3 px-6 font-semibold leading-relaxed">お酒が生まれる場所を訪ねよう！</p> 
       <p class="text-orange-600 text-opacity-75 text-center py-3 px-6 font-semibold leading-relaxed">お酒の工場見学検索アプリ</p> 
     </div>
@@ -10,16 +10,15 @@
   <div class="absolute mt-48 w-full translate-y--2/4 translate-x--2/4">
     <div class="h-screen w-screen flex justify-center items-center">
       <div class='search-liquor-button'>  
-          <button class=" bg-teal-500 hover:bg-teal-400 text-base sm:text-3x1 md:text-3xl lg:text-3xl xl:text-3xl text-white font-bold mr-28 py-4 px-3 rounded-full hover:shadow-sm hover:translate-y-0.5 transform transition">
-          <%= link_to "🍷 お酒から探す", search_from_liquor_type_path,class: "text-white"  %>
-          </button>
-        </div>
-        <div class='search-location-button'>
-          <button class="bg-red-500 hover:bg-red-400 text-base sm:text-3x1 md:text-3xl lg:text-3xl xl:text-3xl text-white font-bold py-4 px-3 rounded-full hover:shadow-sm hover:translate-y-0.5 transform transition">
-          <%= link_to "🗾 場所から探す", search_from_japanmap_path,class: "text-white"  %>
-          </button>
-        </div> 
+        <button class=" bg-teal-500 hover:bg-teal-400 text-base sm:text-3x1 md:text-3xl lg:text-3xl xl:text-3xl text-white font-bold mr-28 py-4 px-3 rounded-full hover:shadow-sm hover:translate-y-0.5 transform transition">
+        <%= link_to "🍷 お酒から探す", search_from_liquor_type_path,class: "text-white"  %>
+        </button>
       </div>
+      <div class='search-location-button'>
+        <button class="bg-red-500 hover:bg-red-400 text-base sm:text-3x1 md:text-3xl lg:text-3xl xl:text-3xl text-white font-bold py-4 px-3 rounded-full hover:shadow-sm hover:translate-y-0.5 transform transition">
+        <%= link_to "🗾 場所から探す", search_from_japanmap_path,class: "text-white"  %>
+        </button>
+      </div> 
     </div>
   </div>
 </div>
