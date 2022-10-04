@@ -1,10 +1,10 @@
 <% content_for :title, '場所から探す' %>
 
-<div class="bg-gradient-to-r from-cyan-300 bg-cover">
-  <h1 class="flex justify-center pt-16 pl-10 text-gray-600 text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl font-semibold">✈️ 気になる都道府県をクリック🍻✨</h1>
+<div class="h-full w-full md:h-screen bg-gradient-to-r from-cyan-300 bg-cover">
+  <h1 class="flex justify-center pt-16 pb-12 pl-10 text-gray-600 text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl font-semibold">✈️ 気になる都道府県をクリック🍻✨</h1>
 
   <div class="pt-14">
-    <div id="japan-map" class="clearfix h-full w-full md:h-screen md:w-screen md:ml-44">
+    <div id="japan-map" class="clearfix h-full">
       <div id="hokkaido-touhoku" class="clearfix">
         <p class="area-title">北海道・東北</p>
         <div class="area">
@@ -51,7 +51,7 @@
             <%= link_to "千葉", breweries_path(q: { prefecture_eq: "千葉県" }),class: "text-white" %>
           </div>
           <div id="tokyo">
-            <%= link_to "東京", breweries_path(q: { prefecture_eq: "東京県" }),class: "text-white" %>
+            <%= link_to "東京", breweries_path(q: { prefecture_eq: "東京都" }),class: "text-white" %>
           </div>
           <div id="kanagawa">
             <%= link_to "神奈川", breweries_path(q: { prefecture_eq: "神奈川県" }),class: "text-white" %>

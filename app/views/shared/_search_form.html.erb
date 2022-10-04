@@ -1,13 +1,14 @@
 <%= search_form_for @q, url: url do |f| %>
   <div class="p-10">
     <div class="mb-14">
-      <%= f.search_field :name_or_address_cont, class: "w-4/6 mr-8 p-4 pl-10 text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500", placeholder: "キーワード検索" %>
+      <%= f.search_field :name_or_address_cont, class: "w-4/6 mr-8 p-4 pl-10 text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500", placeholder: "地名／醸造所名など" %>
       
       <%= f.select :liquor_type_eq,
             Brewery.liquor_types_i18n.invert.map{|key, value| [key, Brewery.liquor_types[value]]},
             { include_blank: "お酒の種類"},
             { class: "w-52 flex-none mt-8 mr-8 p-4 pl-10 text-base bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 cursor-pointer" }
         %>
+
       <%= f.submit '検  索', class: "text-gray-700 right-2.5 bottom-2.5 bg-gradient-to-r from-lime-400 via-yellow-300 to-rose-300 hover:bg-gradient-to-bl font-bold rounded-xl border-gray-300 text-lg px-10 py-4 mt-8 cursor-pointer" %> 
     </div>
   </div>
