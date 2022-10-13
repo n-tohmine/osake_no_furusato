@@ -1,0 +1,11 @@
+<div class="text-gray-700">
+  <% @hotels["result"].each do |result| %>
+    <% next if result["accommodation_type_name"] == "ラブホテル" %> 
+    <div class="mb-8 border-b-2 border-dashed border-indigo-600">
+      <div class="float-left mr-4"><%= image_tag result["main_photo_url"] %></div>
+      宿泊所名：<%= link_to result["hotel_name_trans"], result["url"],target: :_blank, rel: "noopener noreferrer" %></br>
+      施設タイプ：<%= result["accommodation_type_name"] %></br>
+      レビュースコア(10段階)：<%= result["review_score"] %>-<%= result["review_score_word"] %></br>
+    </div>
+  <% end %>
+</div>
