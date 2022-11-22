@@ -1,5 +1,6 @@
 class BreweriesController < ApplicationController
   before_action :set_brewery, only: %i[show]
+  skip_before_action :require_login
 
   def index
     @q = Brewery.ransack(params[:q])
@@ -50,3 +51,4 @@ class BreweriesController < ApplicationController
   end
 
 end
+
