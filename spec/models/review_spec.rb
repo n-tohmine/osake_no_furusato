@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe "search_from_liquor_type/index.html.erb", type: :view do
+RSpec.describe Review, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end

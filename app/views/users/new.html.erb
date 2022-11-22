@@ -1,0 +1,17 @@
+<% content_for :title, t('.title') %>
+<div class= 'flex flex-col items-center text-neutral-500 text-lg' >
+  <div class='w-full max-w-md h-full'>
+    <div class='text-center my-4'>
+      <h1><%= t('.title') %></h1>
+    </div>
+    <%= render partial: 'form', locals: { user: @user } %>
+    <div class='text-center text-base mb-6'>
+      <%= link_to (t '.to_login_page'), login_path %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
