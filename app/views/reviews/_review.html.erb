@@ -1,0 +1,33 @@
+<tr id="review-<%= review.id %>">
+  <td class="text-gray-600">
+    <div class="flex mt-1 mb-1">
+      <h2 class="mr-4 font-bold">🍷<%= review.user.name %>さん</h2>
+      <span><%= l review.created_at, format: :short %></span>
+      <%# 編集・削除ボタン %>
+      <% if current_user.own?(review) %>
+      <ul class="flex">
+        <li class="mx-4">
+          <a href="#" data-review-id="<%= review.id %>" class="js-edit-review-button">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </a>
+        </li>
+        <li>
+          <%= link_to review_path(review), class: "js-delete-review-button", method: :delete, data: { confirm: 'レビューを削除しますか？'} do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+    <div id="js-review-<%= review.id %>" class="ml-3">
+      <p><%= simple_format review.content %></p>
+    </div>
+    <%# 編集フォーム %>
+    <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
+      <textarea id="js-textarea-review-<%= review.id %>" class="bg-gray-50 rounded-lg w-full h-24 border-gray-400 focus:ring-blue-500 focus:border-blue-500"><%= review.content %></textarea></br>
+      <button class="js-button-review-update text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 border-2 border-blue-700 rounded mr-3" data-review-id="<%= review.id %>">更新</button>
+      <button class="js-button-edit-review-cancel text-sm bg-gray-500 hover:bg-gray-700 text-white py-1 px-2 border-2 border-gray-700 rounded"" data-review-id="<%= review.id %>">キャンセル</button>
+    </div>
+  </td>
+<tr>
+<%= javascript_pack_tag 'edit_review' %>

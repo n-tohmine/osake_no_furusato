@@ -29,7 +29,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Assets
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'sassc', '2.1.0'
-gem 'jquery-rails'
 
 # Authentication
 gem 'pundit'
@@ -52,19 +51,19 @@ gem 'ransack'
 gem 'gon'
 
 # Model
-gem 'enum_help'
 gem 'draper'
+gem 'enum_help'
 
 # File_uploader
-gem 'mini_magick'
+gem 'aws-sdk-s3', require: false
 gem 'carrierwave', '~> 2.0'
 gem 'carrierwave-i18n'
 gem 'fog-aws'
-gem 'aws-sdk-s3', require: false
+gem 'mini_magick'
 
 # For googlemap
-gem 'gmaps4rails'
 gem 'geocoder'
+gem 'gmaps4rails'
 
 # Pagenation
 gem 'kaminari'
@@ -76,22 +75,21 @@ gem 'seed-fu'
 group :development, :test do
   # Debugger
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry-byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug'
 
   # Testing framework and related
-  gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rspec-rails'
   gem 'solargraph', require: false
 
   # Email
   gem 'letter_opener_web'
-  gem 'net-smtp'
   gem 'net-imap'
   gem 'net-pop'
-
+  gem 'net-smtp'
 end
 
 group :development do
@@ -99,8 +97,8 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+  gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   # For easily check schema and routing info
@@ -108,8 +106,8 @@ group :development do
   # Check N+1
   gem 'bullet'
   # Lint check, code analyze
-  gem 'rubocop', require: false
   gem 'rails_best_practices'
+  gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
@@ -117,11 +115,11 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'webdrivers'
+  gem 'faker'
   gem 'fuubar'
   gem 'simplecov', require: false
-  gem 'faker'
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

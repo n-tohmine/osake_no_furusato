@@ -10,6 +10,7 @@ ja:
     password_reset: 'パスワードリセット'
     search_word: '検索ワード'
     unspecified: '指定なし'
+    post: '送信'
     message:
       require_login: 'ログインしてください'
       created: '%{item}を作成しました'
@@ -85,6 +86,12 @@ ja:
       success: '「興味あり」に登録しました'
     destroy:
       success: '「興味あり」から外しました'
+  reviews:
+    create:
+      success: 'レビューを投稿しました'
+      fail: 'レビューの投稿に失敗しました'
+    destroy: 
+      success: 'レビューを削除しました'
   password_resets:
     new:
       title: 'パスワードリセット申請'
@@ -99,4 +106,5 @@ ja:
       fail: 'パスワード変更に失敗しました'
   time:
     formats:
-      short: '%Y/%m/%d %H:%M'
+      default: '%Y/%m/%d %H:%M'
+      short: '%Y/%m/%d'
