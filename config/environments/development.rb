@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   config.after_initialize do
@@ -49,7 +49,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   config.action_mailer.default_url_options = Settings.default_url_options.to_h
-  
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

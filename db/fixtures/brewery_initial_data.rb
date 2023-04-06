@@ -17,7 +17,7 @@ csv.each do |brewery|
   Brewery.seed do |s|
     s.name = name
     s.address = address
-    s.phone_number  = phone_number
+    s.phone_number = phone_number
     s.prefecture = prefecture
     s.liquor_type = liquor_type
     s.website_url = website_url
