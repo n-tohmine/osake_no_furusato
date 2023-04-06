@@ -1,50 +1,67 @@
 <% content_for :title, @brewery.name %>
-<div class="flex h-72 md:flex-row md:max-w-full mx-6 my-12">
-  <%= image_tag "#{@brewery.image}", class: "object-contain shadow-lg w-full h-96 rounded-lg md:h-auto md:w-auto" %>
-</div>
-<div class="overflow-x-auto relative shadow-xl sm:rounded-lg mx-6 my-12">
-  <table class="w-full text-lg text-left text-gray-600">
-    <tbody>
-      <tr class="bg-amber-100">
-        <th scope="row" class="py-4 px-6 whitespace-nowrap"><%= Brewery.human_attribute_name :name %>:</th>
-        <td><%= @brewery.name %></td>
-      </tr>
-      <tr class="bg-gray-50">
-        <th scope="row" class="py-4 px-6 whitespace-nowrap"><%= Brewery.human_attribute_name :liquor_type %>:</th>
-        <td><%= @brewery.liquor_type_i18n %></td>
-      </tr>
-      <tr class="bg-amber-100">
-        <th scope="row" class="py-4 px-6 whitespace-nowrap">
-          <%= Brewery.human_attribute_name :address %>:
-        </th>
-        <td><%= @brewery.address.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z') %></td>
-      </tr>
-      
-      <tr class="bg-gray-50">
-        <th scope="row" class="py-4 px-6 whitespace-nowrap">
-        <%= Brewery.human_attribute_name :phone_number %>:
-        </th>
-        <% if @brewery.phone_number %>
-        <td><%= @brewery.phone_number.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z') %></td>
-        <% else %>
-        <td>不明</td>
-        <% end %>
-      </tr>
-      
-      <tr class="bg-amber-100">
-        <th scope="row" class="py-4 px-6 whitespace-nowrap">
-        <%= Brewery.human_attribute_name :website_url %>:
-        </th>
-        <% if @brewery.website_url %>
-        <td><%= link_to @brewery.website_url, "#{@brewery.website_url}" %></td>
-        <% else %>
-        <td>不明</td>
-        <% end %>
-      </tr>
-    </tbody>
-  </table>
-</div>
-  <button class="mx-6 mb-12 p-2 pl-5 pr-5 bg-transparent border-2 border-red-400 text-lg rounded-lg hover:bg-gradient-to-b hover:from-red-500 hover:to-pink-400  focus:border-4 focus:border-red-300">
-  <%= link_to "付近の宿泊施設を探す", nearby_hotels_brewery_path, class: "text-red-400 hover:text-gray-100"%>
+<div class="bg-gradient-to-r from-orange-300">
+  <div class="flex h-96 md:flex-row md:max-w-full mx-20 pt-12 mb-8">
+    <%= image_tag "#{@brewery.image}", class: "object-contain shadow-lg w-full h-96 rounded-lg md:h-auto md:w-auto" %>
+  </div>
+  <div class="overflow-x-auto relative shadow-xl sm:rounded-lg mx-20 mt-12 mb-6">
+    <table class="w-full text-lg text-left text-gray-600">
+      <tbody>
+        <tr class="bg-amber-100">
+          <th scope="row" class="py-4 px-6 whitespace-nowrap"><%= Brewery.human_attribute_name :name %>:</th>
+          <td><%= @brewery.name %></td>
+        </tr>
+        <tr class="bg-gray-50">
+          <th scope="row" class="py-4 px-6 whitespace-nowrap"><%= Brewery.human_attribute_name :liquor_type %>:</th>
+          <td><%= @brewery.liquor_type_i18n %></td>
+        </tr>
+        <tr class="bg-amber-100">
+          <th scope="row" class="py-4 px-6 whitespace-nowrap">
+            <%= Brewery.human_attribute_name :address %>:
+          </th>
+          <td><%= @brewery.address.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z') %></td>
+        </tr>
+        
+        <tr class="bg-gray-50">
+          <th scope="row" class="py-4 px-6 whitespace-nowrap">
+          <%= Brewery.human_attribute_name :phone_number %>:
+          </th>
+          <% if @brewery.phone_number %>
+          <td><%= @brewery.phone_number.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z') %></td>
+          <% else %>
+          <td>不明</td>
+          <% end %>
+        </tr>
+        
+        <tr class="bg-amber-100">
+          <th scope="row" class="py-4 px-6 whitespace-nowrap">
+          <%= Brewery.human_attribute_name :website_url %>:
+          </th>
+          <% if @brewery.website_url %>
+          <td><%= link_to @brewery.website_url, "#{@brewery.website_url}" %></td>
+          <% else %>
+          <td>不明</td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button class="relative inline-flex items-center justify-center p-0.5 mb-6 mr-2 ml-20 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white focus:outline-none focus:ring-pink-200">
+    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
+      <%= link_to "付近の宿泊施設を探す", nearby_hotels_brewery_path, class: "text-red-400 hover:text-gray-100" %>
+    </span>
   </button>
 
+  <!-- レビューエリア -->
+  <h2 class="text-xl font-semibold text-center leading-8 text-white bg-blue-400 mx-20 mb-4">みんなのレビュー</h2>
+  <% if @reviews.present? %>
+    <%= render 'reviews/reviews', { reviews: @reviews } %>
+    <div class="mb-4">
+      <%= paginate @reviews %>
+    </div>
+  <% else %>
+    <p class="text-gray-600 text-center text-lg my-6">⚠︎レビューがまだありません。</p>
+  <% end %>
+  <!-- レビューフォーム -->
+  <%= render 'reviews/form', { brewery: @brewery, review: @review } %>
+</div>

@@ -1,14 +1,16 @@
 <% content_for :title, "#{@brewery.name}付近の宿泊施設" %>
-<div class="my-8 text-center text-gray-700 text-base sm:text-base md:text-2xl lg:text-2xl xl:text-2xl font-bold">
-<%= @brewery.name %>　付近の宿泊施設一覧</br>
-</div>
+<div class="bg-gradient-to-r from-blue-200">
+  <div class="pt-12 text-center text-gray-700 text-base sm:text-base md:text-2xl lg:text-2xl xl:text-2xl font-bold">
+  <%= @brewery.name %>　付近の宿泊施設一覧</br>
+  </div>
 
-<div class="row">
-  <div class="col-12 mx-10 my-10">
-    <% if @hotels["result"].present? %>
-      <%= render 'nearby_hotel', { brewery: @brewery, url: nearby_hotels_brewery_path(@brewery) } %>
-    <% else %>
-      <p class="text-center text-lg bg-cyan-400">⚠︎該当する宿泊施設が見つかりませんでした。</p>       
-    <% end %>
+  <div class="row">
+    <div class="col-12 mt-10 mx-10 pb-10">
+      <% if @hotels["result"].present? %>
+        <%= render 'nearby_hotel', { brewery: @brewery, url: nearby_hotels_brewery_path(@brewery) } %>
+      <% else %>
+        <p class="text-center text-lg bg-cyan-400">⚠︎該当する宿泊施設が見つかりませんでした。</p>       
+      <% end %>
+    </div>
   </div>
 </div>
