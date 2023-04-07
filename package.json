@@ -16,6 +16,10 @@
     "webpack-cli": "^3.3.12"
   },
   "version": "0.1.0",
+  "engines": {
+    "node": "16.20.0",
+    "yarn": "1.22.19"
+  },
   "devDependencies": {
     "postcss-cli": "^10.0.0",
     "webpack-dev-server": "^3"
