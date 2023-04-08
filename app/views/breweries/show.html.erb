@@ -63,5 +63,9 @@
     <p class="text-gray-600 text-center text-lg my-6">⚠︎レビューがまだありません。</p>
   <% end %>
   <!-- レビューフォーム -->
-  <%= render 'reviews/form', { brewery: @brewery, review: @review } %>
+  <% if logged_in? %>
+    <%= render 'reviews/form', { brewery: @brewery, review: @review } %>
+  <% else %>
+    <p class="text-center text-gray-600 pt-4 pb-8 font-bold text-lg">ログインしてレビューを投稿しましょう📝</p>
+  <% end %>
 </div>

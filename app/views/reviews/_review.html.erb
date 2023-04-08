@@ -4,7 +4,7 @@
       <h2 class="mr-4 font-bold">🍷<%= review.user.name %>さん</h2>
       <span><%= l review.created_at, format: :short %></span>
       <%# 編集・削除ボタン %>
-      <% if current_user.own?(review) %>
+      <% if current_user&&current_user.own?(review) %>
       <ul class="flex">
         <li class="mx-4">
           <a href="#" data-review-id="<%= review.id %>" class="js-edit-review-button">
