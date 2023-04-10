@@ -76,16 +76,6 @@ ja:
       no_result: '条件に合う醸造所が見つかりません'
     show:
       title: '醸造所詳細'
-  likes:
-    create:
-      success: '「お気に入り」に登録しました'
-    destroy:
-      success: '「お気に入り」から外しました'
-  keeps:
-    create:
-      success: '「興味あり」に登録しました'
-    destroy:
-      success: '「興味あり」から外しました'
   reviews:
     create:
       success: 'レビューを投稿しました'
