@@ -2,6 +2,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
   has_many :reviews, dependent: :destroy
   has_many :keeps, dependent: :destroy
+  has_many :keep_breweries, through: :keeps, source: :brewery
   has_many :likes, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 255 }
@@ -17,5 +18,17 @@ class User < ApplicationRecord
 
   def own?(object)
     id == object.user_id
+  end
+
+  def keep(brewery)
+    keep_breweries << brewery
+  end
+
+  def unkeep(brewery)
+    keep_breweries.destroy(brewery)
+  end
+
+  def keep?(brewery)
+    keep_breweries.include?(brewery)
   end
 end

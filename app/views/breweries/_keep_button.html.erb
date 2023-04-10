@@ -1,0 +1,5 @@
+<% if current_user.keep?(brewery) %>
+  <%= render 'unkeep', { brewery: brewery } %>
+<% else %>
+  <%= render 'keep', { brewery: brewery } %>
+<% end %>
