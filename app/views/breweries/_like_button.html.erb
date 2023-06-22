@@ -1,0 +1,5 @@
+<% if current_user.like?(brewery) %>
+  <%= render 'unlike', { brewery: brewery } %>
+<% else %>
+  <%= render 'like', { brewery: brewery }%>
+<% end %>
