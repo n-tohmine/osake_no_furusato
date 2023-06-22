@@ -4,9 +4,13 @@ Rails.application.routes.draw do
   resources :breweries, only: %i[index show] do
     get 'nearby_hotels', on: :member
     resources :reviews, only: %i[create update destroy], shallow: true
-    get 'keeps', on: :collection
+    collection do
+      get 'keeps'
+      get 'likes'
+    end
   end
   resources :keeps, only: %i[create destroy]
+  resources :likes, only: %i[create destroy]
   resources :users
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

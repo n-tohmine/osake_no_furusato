@@ -6,10 +6,9 @@
       <%= image_tag "no_image.jpg", class: "object-cover w-full h-96 rounded-t-lg md:h-40 md:w-48 md:rounded-none md:rounded-l-lg" %>
     <% end %>
     <div class="flex flex-col justify-between p-4 leading-normal">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700"><%= brewery.name %></h5>
-        <p class="mb-3 font-normal text-gray-700"><%= brewery.address.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z')  %></p>
-        <p class="mb-3 font-normal text-gray-700">お酒の種類：<%= brewery.liquor_type_i18n %></p>
-        <%# ユーザー登録機能作成後お気に入り・気になるアイコンをつける %>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700"><%= brewery.name %></h5>
+      <p class="mb-3 font-normal text-gray-700"><%= brewery.address.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z')  %></p>
+      <p class="mb-3 font-normal text-gray-700">お酒の種類：<%= brewery.liquor_type_i18n %></p>
     </div>
   </div>
 <% end %>

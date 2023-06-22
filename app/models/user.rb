@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :keeps, dependent: :destroy
   has_many :keep_breweries, through: :keeps, source: :brewery
   has_many :likes, dependent: :destroy
+  has_many :like_breweries, through: :likes, source: :brewery
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true
@@ -30,5 +31,17 @@ class User < ApplicationRecord
 
   def keep?(brewery)
     keep_breweries.include?(brewery)
+  end
+
+  def like(brewery)
+    like_breweries << brewery
+  end
+
+  def unlike(brewery)
+    like_breweries.destroy(brewery)
+  end
+
+  def like?(brewery)
+    like_breweries.include?(brewery)
   end
 end
