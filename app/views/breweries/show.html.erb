@@ -1,9 +1,9 @@
 <% content_for :title, @brewery.name %>
 <div class="bg-gradient-to-r from-orange-300">
-  <div class="flex h-96 md:flex-row md:max-w-full mx-20 pt-12 mb-4">
+  <div class="flex h-96 md:flex-row md:max-w-full mx-10 pt-12 mb-4">
     <%= image_tag "#{@brewery.image}", class: "object-contain shadow-lg w-full h-96 rounded-lg md:h-auto md:w-auto" %>
   </div>
-  <div class="overflow-x-auto relative shadow-xl sm:rounded-lg mx-20 mt-1 mb-6">
+  <div class="overflow-x-auto relative shadow-xl sm:rounded-lg mx-10 mt-1 mb-6">
     <table class="w-full text-lg text-left text-gray-600">
       <tbody>
         <tr class="bg-amber-100">
@@ -46,25 +46,27 @@
     </table>
   </div>
 
-  <button class="relative inline-flex items-center justify-center p-0.5 mb-6 mr-2 ml-20 overflow-hidden text-lg font-medium rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white focus:outline-none focus:ring-pink-200">
-    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
-      <%= link_to nearby_hotels_brewery_path, class: "text-red-400 hover:text-gray-100" do %>
-        <i class="fa-solid fa-bed"></i> 付近の宿泊施設を探す
-      <% end %>
-    </span>
-  </button>
+  <div class="flex flex-wrap justify-center">
+    <%= link_to nearby_hotels_brewery_path, class: "text-red-400 hover:text-gray-100" do %>
+      <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 ml-4 overflow-hidden lg:text-lg md:text-base font-medium rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white focus:outline-none focus:ring-pink-200">
+        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
+          <i class="fa-solid fa-bed"></i> 付近の宿泊施設を探す
+        </span>
+      </button>
+    <% end %>
 
-  <% if logged_in? %>
-    <div class="relative inline-flex">
-      <%= render 'keep_button', { brewery: @brewery } %>
-    </div>
-    <div class="relative inline-flex ml-6">
-      <%= render 'like_button', { brewery: @brewery } %>
-    </div>
-  <% end %>
+    <% if logged_in? %>
+      <div class="relative inline-flex">
+        <%= render 'keep_button', { brewery: @brewery } %>
+      </div>
+      <div class="relative inline-flex">
+        <%= render 'like_button', { brewery: @brewery } %>
+      </div>
+    <% end %>
+  </div>
 
   <!-- レビューエリア -->
-  <h2 class="text-xl font-semibold text-center leading-8 text-white bg-blue-400 mx-20 mb-4">みんなのレビュー</h2>
+  <h2 class="text-xl font-semibold text-center leading-8 text-white bg-blue-400 lg:mx-20 md:mx-0 mt-6 mb-4">みんなのレビュー</h2>
   <% if @reviews.present? %>
     <%= render 'reviews/reviews', { reviews: @reviews } %>
     <div class="mb-4">
