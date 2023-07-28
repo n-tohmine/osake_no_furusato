@@ -1,22 +1,21 @@
-<div class="h-screen w-screen relative bg-center bg-cover bg-top-image bg-no-repeat">
-  <div class="absolute w-full">
-    <p class="text-gray-700 text-base text-center px-6 bg-yellow-200 font-semibold leading-relaxed">※新型コロナウイルスの影響により工場見学を中止している醸造所がございます。</br>必ずホームページ等で最新の実施状況をご確認ください。</p> 
-    <div class="text-3xl sm:text-4xl md:text-5xl  lg:text-5xl xl:text-5xl mt-8">
+<div class="bg-center bg-cover bg-top-image bg-no-repeat">
+  <p class="text-gray-700 text-base text-center px-6 bg-yellow-200 font-semibold leading-relaxed">※新型コロナウイルスの影響により工場見学を中止している醸造所がございます。</br>必ずホームページ等で最新の実施状況をご確認ください。</p> 
+  <div class="text-3xl sm:text-4xl md:text-5xl  lg:text-5xl xl:text-5xl mt-8">
       <p class="text-orange-600 text-opacity-75 text-center py-3 px-6 font-semibold leading-relaxed">お酒が生まれる場所を訪ねよう！</p> 
       <p class="text-orange-600 text-opacity-75 text-center py-3 px-6 font-semibold leading-relaxed">お酒の工場見学検索アプリ</p> 
-    </div>
-    <div class="grid grid-cols-1 justify-items-center items-center gap-8 md:grid-cols-4 mt-48">
-      <div class='search-liquor-button md:col-start-2 col-span-1'>  
-        <button class=" bg-teal-500 hover:bg-teal-400 text-base sm:text-3x1 md:text-3xl lg:text-3xl xl:text-3xl text-white font-bold py-4 px-5 rounded-full hover:shadow-sm hover:translate-y-0.5 transform transition">
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 justify-items-center items-center gap-8 pb-12 md:py-36">
+    <div class="search-liquor-button md:col-start-2 col-span-1">  
+      <button class=" bg-teal-500 hover:bg-teal-400 text-base sm:text-3x1 md:text-3xl lg:text-3xl xl:text-3xl text-white font-bold py-4 px-5 rounded-full hover:shadow-sm hover:translate-y-0.5 transform transition">
         <%= link_to "🍷 お酒から探す", search_from_liquor_type_path,class: "text-white" %>
-        </button>
-      </div>
-      <div class='search-location-button md:col-start-3 col-span-1'>
-        <button class="bg-red-500 hover:bg-red-400 text-base sm:text-3x1 md:text-3xl lg:text-3xl xl:text-3xl text-white font-bold py-4 px-5 rounded-full hover:shadow-sm hover:translate-y-0.5 transform transition">
-        <%= link_to "🗾 場所から探す", search_from_japanmap_path,class: "text-white"  %>
-        </button>
-      </div> 
+      </button>
     </div>
+    <div class="search-location-button md:col-start-3 col-span-1">
+      <button class="bg-red-500 hover:bg-red-400 text-base sm:text-3x1 md:text-3xl lg:text-3xl xl:text-3xl text-white font-bold py-4 px-5 rounded-full hover:shadow-sm hover:translate-y-0.5 transform transition">
+        <%= link_to "🗾 場所から探す", search_from_japanmap_path,class: "text-white"  %>
+      </button>
+    </div> 
   </div>
 </div>
 
@@ -31,7 +30,7 @@
   <div class="pt-8 pb-3 px-6 font-semibold leading-relaxed">
     <p class="text-base sm:text-xl md:text-3xl lg:text-4xl xl:text-4xl text-gray-600">🍺お酒のふるさとを最大限に活用するには？</p>
   </div>
-  <div class="text-gray-600 py-2 px-20 text-base sm:text-lg md:text-3xl lg:text-3xl xl:text-3xl  leading-relaxed">
+  <div class="text-gray-600 py-2 px-20 text-base sm:text-lg md:text-3xl lg:text-3xl xl:text-3xl leading-relaxed">
     <ul class="list-decimal">
       <li>日帰りで行けない地域の醸造所を探しましょう</li>
       <li>興味のあるお酒で絞って探しましょう</li>
@@ -51,5 +50,3 @@
     </ul>
   </div>
 </div>
-
-
