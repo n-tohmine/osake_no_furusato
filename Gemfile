@@ -56,7 +56,7 @@ gem 'enum_help'
 
 # File_uploader
 gem 'aws-sdk-s3', require: false
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 3.0'
 gem 'carrierwave-i18n'
 gem 'fog-aws'
 gem 'mini_magick'
