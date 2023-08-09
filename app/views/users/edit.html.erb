@@ -1,0 +1,47 @@
+<%= javascript_pack_tag 'preview_image' %>
+<% content_for :title, t('.title')%>
+<div class= 'flex flex-col items-center text-neutral-500 text-lg'>
+  <div class='w-full max-w-md'>
+    <div class='text-center my-8'>
+      <h1><%= t('.title') %></h1>
+    </div>
+    <%= form_with model: @user, url: user_path, local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="mx-8 text-gray-700 text-sm font-bold">      
+        <%= image_tag @user.avatar.url, id: "preview", size: "200x200", accept: "image/*", class: "inline mx-20 mb-4 rounded-md" %></br>
+        <div class='mb-2 font-bold'>
+          <%= f.label :avatar %>
+        </div>
+        <%= f.file_field :avatar, onchange: "previewImage()", class: "block w-full mb-2 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" %>
+        <%= f.hidden_field :avatar_cache %>
+        <% if @user.avatar? %>
+          <label>
+            <%= f.check_box :remove_avatar %>
+            画像を削除する
+          </label>
+        <% end %>
+      </div>
+      <div class='flex flex-col justify-center flex-wrap mb-6 mx-8'>
+        <div class='text-gray-700 text-sm mt-6 mb-8'>
+          <div class='mb-2 font-bold'>
+            <%= f.label :living_place, User.human_attribute_name(:living_place) %>
+          </div>
+          <%= f.select :living_place, User.living_places.keys, { include_blank: "未設定", selected: @user.living_place }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+        </div>
+        <div class='text-gray-700 text-sm mb-8'>
+          <div class='mb-2 font-bold'>
+            <%= f.label :favorite_liquor_type, User.human_attribute_name(:favorite_liquor_type) %>
+          </div>
+          <%= f.select :favorite_liquor_type, User.favorite_liquor_types.keys.map { |k| [I18n.t("enums.user.favorite_liquor_type.#{k}"), k] }, { include_blank: "未設定", selected: @user.favorite_liquor_type }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+        </div>
+        <div class='text-gray-700 text-sm mb-8'>
+          <div class='mb-2 font-bold'>
+            <%= f.label :self_introduction, User.human_attribute_name(:self_introduction)%>
+          </div>
+          <%= f.text_area :self_introduction, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 mb-1 h-40", placeholder: @user.self_introduction %>
+        </div>
+        <%= f.submit t('defaults.update'), class: "text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 text-center tracking-widest mr-2 mb-4 cursor-pointer" %>
+      </div>
+    <% end %>
+  </div>
+</div>

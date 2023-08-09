@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_10_132016) do
+ActiveRecord::Schema.define(version: 2023_08_02_133723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,36 +61,34 @@ ActiveRecord::Schema.define(version: 2023_04_10_132016) do
   end
 
   create_table "keeps", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "brewery_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.uuid "user_id", null: false
     t.index ["brewery_id"], name: "index_keeps_on_brewery_id"
-    t.index ["user_id", "brewery_id"], name: "index_keeps_on_user_id_and_brewery_id", unique: true
     t.index ["user_id"], name: "index_keeps_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "brewery_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.uuid "user_id", null: false
     t.index ["brewery_id"], name: "index_likes_on_brewery_id"
-    t.index ["user_id", "brewery_id"], name: "index_likes_on_user_id_and_brewery_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.text "content", null: false
-    t.bigint "user_id", null: false
     t.bigint "brewery_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.uuid "user_id", null: false
     t.index ["brewery_id"], name: "index_reviews_on_brewery_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"

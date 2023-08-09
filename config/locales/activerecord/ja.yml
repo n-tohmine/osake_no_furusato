@@ -4,6 +4,11 @@ ja:
       role:
         general: '一般'
         admin: '管理者'
+      favorite_liquor_type:
+        beer: '🍺ビール'
+        wine: '🍷ワイン'
+        sake: '🍶日本酒'
+        whiskey: '🥃ウイスキー' 
     brewery:
       liquor_type:
         beer: '🍺ビール'
@@ -23,8 +28,8 @@ ja:
         name: 'ユーザー名'
         email: 'メールアドレス'
         avatar: 'プロフィール画像'
-        resident_prefecture: '居住地'
-        favorite_liquor_type: '好きなお酒・飲み方'
+        living_place: '居住地'
+        favorite_liquor_type: '好きなお酒'
         self_introduction: '自己紹介'
         password: 'パスワード'
         password_confirmation: 'パスワード（確認）'
