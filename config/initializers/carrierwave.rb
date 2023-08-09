@@ -3,9 +3,10 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
+  if Rails.env.production?
     config.storage :fog
     config.fog_provider = 'fog/aws'
-    config.fog_directory  = 'osake-no-furusato-user-avatar'
+    config.fog_directory = 'osake-no-furusato-user-avatar'
     config.fog_credentials = {
       provider: 'AWS',
       aws_access_key_id: Rails.application.credentials[:aws][:access_key_id],
@@ -13,4 +14,7 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1',
       path_style: true
     }
+  else
+    config.storage :file
+  end
 end

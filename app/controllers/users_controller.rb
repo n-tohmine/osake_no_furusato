@@ -24,7 +24,14 @@ class UsersController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    if @user.update(user_profile_params)
+      redirect_to user_path(@user), success: t('.success')
+    else
+      flash.now[:danger] = t('.fail')
+      render :edit
+    end
+  end
 
   def destroy
     @user.detroy
@@ -38,6 +45,10 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def user_profile_params
+    params.require(:user).permit(:avatar, :avatar_cache, :remove_avatar, :living_place, :favorite_liquor_type, :self_introduction)
   end
 end

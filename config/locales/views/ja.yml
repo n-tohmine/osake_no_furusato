@@ -59,6 +59,11 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+    edit:
+      title: 'プロフィール編集'
+    update:
+      success: 'プロフィールを更新しました'
+      fail: 'プロフィールの更新に失敗しました'
   user_sessions:
     new:
       require_login: 'ログインしてください'

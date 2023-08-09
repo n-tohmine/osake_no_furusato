@@ -1,2 +1,37 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% content_for :title, "#{@user.name}さんのプロフィール" %>
+<div class="flex md:flex-row md:max-w-full mx-10 pt-12 mb-4 md:mx-60">
+  <%= image_tag "#{@user.avatar}", size: "200x200", class: "rounded-md" %>
+</div>
+<div class="overflow-x-auto relative shadow-xl rounded-lg mx-10 mt-8 ms:mx-60 md:mx-60">
+  <table class="w-full text-lg text-gray-600">
+    <tbody>
+      <tr class="bg-sky-200">
+        <th scope="row" class="w-8 py-4 px-6 text-right whitespace-nowrap"><%= User.human_attribute_name :name %>:</th>
+        <td class="w-100 text-left"><%= @user.name %></td>
+      </tr>
+      <tr class="bg-gray-200">
+        <th scope="row" class="w-8 py-4 px-6 text-right whitespace-nowrap"><%= User.human_attribute_name :living_place %>:</th>
+        <td class="w-100 text-left"><%= @user.living_place %></td>
+      </tr>
+      <tr class="bg-sky-200">
+        <th scope="row" class="w-8 py-4 px-6 text-right whitespace-nowrap">
+          <%= User.human_attribute_name :favorite_liquor_type %>:
+        </th>
+        <td class="w-100 text-left"><%= @user.favorite_liquor_type_i18n %></td>
+      </tr>
+      <tr class="bg-gray-200">
+        <th scope="row" class="w-8 py-4 px-6 text-right align-middle">
+          <%= User.human_attribute_name :self_introduction %>:
+        </th>
+        <td class="w-100 text-left py-4 pr-8 whitespace-pre"><%= @user.self_introduction %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<% if current_user == @user %>
+  <div class="flex">
+    <div class="relative inline-flex my-8 ml-16 md:mx-60 text-lg">
+      <%= link_to "プロフィールを編集", edit_user_path %>
+    </div>
+  </div>
+<% end %>
