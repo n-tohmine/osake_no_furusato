@@ -1,6 +1,12 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
   mount_uploader :avatar, AvatarUploader
+  before_save :write_avatar_identifier
+  after_commit :remove_avatar!, on: :destroy
+  after_commit :mark_remove_avatar_false, on: :update
+  after_commit :remove_previously_stored_avatar, on: :update
+  after_commit :store_avatar!, on: :update
+
   has_many :reviews, dependent: :destroy
   has_many :keeps, dependent: :destroy
   has_many :keep_breweries, through: :keeps, source: :brewery
