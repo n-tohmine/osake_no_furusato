@@ -1,8 +1,11 @@
 class AvatarUploader < CarrierWave::Uploader::Base
+  before :remove, :log_removal
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
   process resize_to_fit: [200, 200]
+
   # Choose what kind of storage to use for this uploader:
   # storage :file
   if Rails.env.development?
@@ -49,6 +52,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
-  #   "something.jpg" if original_filename
+  #   "avatar.#{file.extension}" if original_filename
   # end
+
+  private
+
+  def log_removal
+    ::Rails.logger.info(format('Deleting file on S3: %s', @file))
+  end
 end

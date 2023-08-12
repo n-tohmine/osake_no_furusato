@@ -25,6 +25,11 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
+    if params[:user][:remove_avatar] == '1'
+      @user.remove_avatar!
+      @user.save
+    end
+    
     if @user.update(user_profile_params)
       redirect_to user_path(@user), success: t('.success')
     else
