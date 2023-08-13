@@ -13,7 +13,7 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "stylesheets/application.scss"
-import "flowbite"
+// import "flowbite"
 import '@fortawesome/fontawesome-free/js/all';
 
 Rails.start()
