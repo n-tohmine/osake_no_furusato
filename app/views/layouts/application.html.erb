@@ -20,19 +20,20 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
     <link href="../../assets/stylesheets/search_from_japanmap.scss" rel="stylesheet" type="text/scss">
+    <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.min.css" />
   </head>
 
   <body class="flex flex-col min-h-screen">
-      <% if logged_in? %>
-        <%= render partial: "shared/header" %>
-      <% else %>
-        <%= render partial: "shared/before_login_header" %>
-      <% end %>
-      <%= render "shared/flash_message" %>
-      <main class="flex-grow">
-        <%= yield %>
-      </main>
-      <%= render partial: "shared/footer" %>
-      <script src="../path/to/flowbite/dist/flowbite.js"></script>
+    <% if logged_in? %>
+      <%= render partial: "shared/header" %>
+    <% else %>
+      <%= render partial: "shared/before_login_header" %>
+    <% end %>
+    <%= render "shared/flash_message" %>
+    <main class="flex-grow">
+      <%= yield %>
+    </main>
+    <%= render partial: "shared/footer" %>
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
   </body>
 </html>

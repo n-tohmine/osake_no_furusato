@@ -6,9 +6,9 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
   ],
-  content: [
-    "./node_modules/flowbite/**/*.js"
-  ],
+  // content: [
+  //   './node_modules/flowbite/**/*.js'
+  // ],
   theme: {
     extend: {
       backgroundImage: (theme) => ({
@@ -16,8 +16,8 @@ module.exports = {
       }),
     },
   },
-  plugins: [
-    require('flowbite/plugin')
-  ],
+  // plugins: [
+  //   require('flowbite/plugin')
+  // ],
   important: true,
 };
