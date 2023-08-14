@@ -1,23 +1,25 @@
-<nav class="bg-yellow-400 px-3.5 py-2">
+<nav class="bg-amber-400 px-3.5 py-2">
   <div class="container flex flex-wrap justify-between items-center">
     <%= link_to root_path do %>
-    <span class="font-semibold text-xl tracking-tight rounded-md hover:text-white first-line:">お酒のふるさと</span>
+      <span class="font-semibold text-xl tracking-tight rounded-md text-blue-700 hover:text-white first-line:">お酒のふるさと</span>
     <% end %>
   
-    <button data-collapse-toggle="navbar-default" type="button" class="flex-row-reverse inline-flex items-center p-2 ml-3 text-sm text-gray-100 rounded-lg md:hidden hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
-      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-100 rounded-lg md:hidden hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+      </svg>
     </button>
-
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul class="flex flex-col p-2 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium md:border-0">
+      <ul class="flex flex-col p-2 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium md:border-0 text-right">
         <li>
-          <%= link_to '醸造所検索', breweries_path, class:'block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-medium' %>
+          <%= link_to '醸造所検索', breweries_path, class:'inline-block text-white hover:bg-stone-500 hover:text-white px-3 py-2 rounded-md text-sm font-bold'%>
         </li>
         <li>
-          <%= link_to 'ログイン', login_path, class:'block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-medium' %>
+          <%= link_to 'ログイン', login_path, class:'inline-block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-bold' %>
         </li>
         <li>
-          <%= link_to 'ユーザー登録', new_user_path, class:'block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-medium' %>
+          <%= link_to 'ユーザー登録', new_user_path, class:'inline-block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm font-bold' %>
         </li>
       </ul>
     </div>
