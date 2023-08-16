@@ -1,0 +1,14 @@
+<% content_for :title, t('.title') %>
+<div class="bg-rose-100 min-h-screen">
+  <div class="py-12 mb-4 text-center text-gray-600 text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold">
+    <p><i class="mr-2 fa-solid fa-heart"></i>お気に入り一覧</p>
+  </div>
+  <% if @like_breweries.present? %>
+    <%= render partial: 'brewery', collection: @like_breweries %>
+  <% else %>
+    <p class="text-center text-lg text-gray-700 bg-cyan-400"><%= t('.no_likes') %></p> 
+  <% end %>
+  <div class="pb-8">
+    <%= paginate @like_breweries %>
+  </div>
+</div>
