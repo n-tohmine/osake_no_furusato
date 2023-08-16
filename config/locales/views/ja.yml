@@ -28,16 +28,16 @@ ja:
       create:
         success: 'ログインしました'
         fail: 'ログインに失敗しました'
-    user:
       destroy:
         success: 'ログアウトしました'
+    user:
       index:
         title: 'ユーザー一覧'
       show:
         title: 'ユーザー詳細'
       edit:
         title: 'ユーザー編集'
-      deestroy:
+      destroy:
         title: 'ユーザー削除'
     breweries:
       index:
@@ -50,6 +50,9 @@ ja:
         title: '醸造所編集'  
       destroy:
         title: '醸造所削除'  
+      likes:
+        title: 'お気に入り一覧'
+        no_likes: '⚠︎お気に入りの登録がありません。'
   users: # controllers/usersに対応
     index:
       title: 'ユーザー一覧'
@@ -78,9 +81,12 @@ ja:
   breweries:
     index:
       title: '醸造所一覧'
-      no_result: '条件に合う醸造所が見つかりません'
+      no_result: '⚠︎条件に合う醸造所が見つかりません'
     show:
       title: '醸造所詳細'
+    likes:
+      title: 'お気に入り一覧'
+      no_likes: '⚠︎お気に入りの登録がありません'
   reviews:
     create:
       success: 'レビューを投稿しました'

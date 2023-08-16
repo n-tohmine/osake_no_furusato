@@ -1,12 +1,12 @@
 <% content_for :title, t('.title') %>
-<div class="bg-orange-100">
+<div class="bg-orange-100 min-h-screen">
   <%= render 'shared/search_form', url: breweries_path %>
-  <div class="mx-10">
-    <% if @breweries.present? %>
-      <%= render @breweries %>
-    <% else %>
-      <p class="text-center text-lg bg-cyan-400">⚠︎該当する醸造所が見つかりませんでした。</p> 
-    <% end %>
+  <% if @breweries.present? %>
+    <%= render @breweries %>
+  <% else %>
+    <p class="text-center text-lg text-gray-700 bg-cyan-400"><%= t('.no_result') %></p> 
+  <% end %>
+  <div class="pb-8">
     <%= paginate @breweries %>
   </div>
 </div>

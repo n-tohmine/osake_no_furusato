@@ -46,6 +46,10 @@ class BreweriesController < ApplicationController
     @hotels = response_json
   end
 
+  def likes
+    @like_breweries = current_user.like_breweries.order(created_at: :desc).page(params[:page]).per(5)
+  end
+
   private
 
   def set_brewery
