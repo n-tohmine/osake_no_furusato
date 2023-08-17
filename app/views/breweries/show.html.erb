@@ -46,7 +46,7 @@
     </table>
   </div>
 
-  <div class="flex flex-wrap justify-center">
+  <div class="flex flex-col text-align justify-center items-center md:flex-row">
     <%= link_to nearby_hotels_brewery_path, class: "text-red-400 hover:text-gray-100" do %>
       <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 ml-4 overflow-hidden lg:text-lg md:text-base font-medium rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white focus:outline-none focus:ring-pink-200">
         <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
@@ -69,7 +69,7 @@
   <h2 class="text-xl font-semibold text-center leading-8 text-white bg-blue-400 lg:mx-20 md:mx-0 mt-6 mb-4">みんなのレビュー</h2>
   <% if @reviews.present? %>
     <%= render 'reviews/reviews', { reviews: @reviews } %>
-    <div class="mb-4">
+    <div class="mb-4 text-gray-500 font-bold">
       <%= paginate @reviews %>
     </div>
   <% else %>
