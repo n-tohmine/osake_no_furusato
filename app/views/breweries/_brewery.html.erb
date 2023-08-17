@@ -1,15 +1,15 @@
 <%= link_to brewery_path(brewery) do %>
   <div class="flex">
-    <div class="flex w-full flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full mx-24 md:mx-32 xl:mx-48 mb-6 hover:bg-gray-100">
+    <div class="flex w-full flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full mx-10 md:mx-48 mb-6 hover:bg-gray-100">
       <% if brewery.image %>
-        <%= image_tag "#{brewery.image}", class: "object-cover w-full h-60 rounded-t-lg md:h-40 md:w-48 md:rounded-none md:rounded-l-lg" %>
+        <%= image_tag "#{brewery.image}", class: "object-cover w-full h-56 rounded-t-lg md:h-40 md:w-48 md:rounded-none md:rounded-l-lg" %>
       <% else %>
-        <%= image_tag "no_image.jpg", class: "object-cover w-full h-60 rounded-t-lg md:h-40 md:w-48 md:rounded-none md:rounded-l-lg" %>
+        <%= image_tag "no_image.jpg", class: "object-cover w-full h-56 rounded-t-lg md:h-40 md:w-48 md:rounded-none md:rounded-l-lg" %>
       <% end %>
       <div class="flex flex-col justify-between p-4 leading-normal">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700"><%= brewery.name %></h5>
+        <h5 class="mb-2 md:text-2xl text-lg font-bold tracking-tight text-gray-700"><%= brewery.name %></h5>
         <p class="mb-3 font-normal text-gray-700"><%= brewery.address.tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z')  %></p>
-        <p class="mb-3 font-normal text-gray-700">お酒の種類：<%= brewery.liquor_type_i18n %></p>
+        <p class="mb-1 font-normal text-gray-700">お酒の種類：<%= brewery.liquor_type_i18n %></p>
       </div>
     </div>
   </div>

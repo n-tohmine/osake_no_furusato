@@ -1,10 +1,14 @@
 <tr id="review-<%= review.id %>">
-  <td class="text-gray-600">
-    <div class="flex mt-1 mb-1">
+  <td class="text-gray-600 pb-4">
+    <div class="flex flex-wrap mt-1 mb-1">
       <h2 class="mr-4 font-bold">🍷<%= review.user.name %>さん</h2>
       <span><%= l review.created_at, format: :short %></span>
-      <%# 編集・削除ボタン %>
-      <% if current_user&&current_user.own?(review) %>
+    </div>
+    <div id="js-review-<%= review.id %>" class="ml-3">
+      <p><%= simple_format review.content %></p>
+    </div>
+    <%# 編集・削除ボタン %>
+    <% if current_user&&current_user.own?(review) %>
       <ul class="flex">
         <li class="mx-4">
           <a href="#" data-review-id="<%= review.id %>" class="js-edit-review-button">
@@ -17,11 +21,7 @@
           <% end %>
         </li>
       </ul>
-      <% end %>
-    </div>
-    <div id="js-review-<%= review.id %>" class="ml-3">
-      <p><%= simple_format review.content %></p>
-    </div>
+    <% end %>
     <%# 編集フォーム %>
     <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
       <textarea id="js-textarea-review-<%= review.id %>" class="bg-gray-50 rounded-lg w-full h-24 border-gray-400 focus:ring-blue-500 focus:border-blue-500"><%= review.content %></textarea></br>
