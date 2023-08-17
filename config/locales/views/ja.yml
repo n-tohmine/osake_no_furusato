@@ -87,6 +87,9 @@ ja:
     likes:
       title: 'お気に入り一覧'
       no_likes: '⚠︎お気に入りの登録がありません'
+    keeps:
+      title: '気になる一覧'
+      no_keeps: '⚠︎気になるの登録がありません'
   reviews:
     create:
       success: 'レビューを投稿しました'

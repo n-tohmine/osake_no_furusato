@@ -1,7 +1,7 @@
 <%= link_to keep_path(current_user.keeps.find_by(brewery_id: brewery.id)), id: "js-keep-button-for-brewery-#{brewery.id}", method: :delete, remote: true do %>
-  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 ml-4 overflow-hidden lg:text-lg md:text-base font-medium rounded-lg group bg-gradient-to-br from-yellow-400 to-orange-500 group-hover:from-yellow-400 group-hover:to-orange-500 hover:text-white focus:outline-none focus:ring-yellow-200">
+  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 ml-4 overflow-hidden lg:text-lg md:text-base font-medium rounded-lg group bg-gradient-to-br from-yellow-500 to-orange-500 group-hover:from-yellow-400 group-hover:to-orange-500 hover:text-white focus:outline-none focus:ring-yellow-200">
     <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
-      <p class="text-yellow-400 hover:text-gray-100"><i class="mr-2 fa-solid fa-star"></i>気になるリストから削除</p>
+      <p class="text-yellow-500 hover:text-gray-100"><i class="mr-2 fa-solid fa-star"></i>気になるリストから削除</p>
     </span>
   </button>
 <% end %>
