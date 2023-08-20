@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
-  root  to: 'home#top'
+  root to: 'home#top'
   resources :breweries, only: %i[index show] do
     get 'nearby_hotels', on: :member
     resources :reviews, only: %i[create update destroy], shallow: true

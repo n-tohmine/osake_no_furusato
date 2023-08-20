@@ -21,7 +21,7 @@ ja:
       brewery: '醸造所'
       review: 'レビュー'
       like: 'お気に入り'
-      keep: '興味あり'
+      keep: '気になる'
     attributes:
       # view→t(User.human_attribute_name :name) => "名前" / t("activerecord.attributes.user.name")
       user:

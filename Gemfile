@@ -31,7 +31,6 @@ gem 'font-awesome-sass', '~> 5.15.1'
 gem 'sassc', '2.1.0'
 
 # Authentication
-gem 'pundit'
 gem 'sorcery'
 
 # UI/UX
