@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       @user.remove_avatar!
       @user.save
     end
-    
+
     if @user.update(user_profile_params)
       redirect_to user_path(@user), success: t('.success')
     else
