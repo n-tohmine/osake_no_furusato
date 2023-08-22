@@ -18,7 +18,7 @@ Metrics/AbcSize:
   Max: 35
 
 Metrics/BlockLength:
-  Max: 30
+  Max: 50
   Exclude:
     - 'Gemfile'
     - 'config/**/*'

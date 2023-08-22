@@ -33,6 +33,9 @@ gem 'sassc', '2.1.0'
 # Authentication
 gem 'sorcery'
 
+# Authorization
+gem 'cancancan'
+
 # UI/UX
 gem 'rails-i18n'
 
@@ -70,6 +73,9 @@ gem 'kaminari-i18n'
 
 # Seeds
 gem 'seed-fu'
+
+# admin
+gem 'activeadmin'
 
 group :development, :test do
   # Debugger

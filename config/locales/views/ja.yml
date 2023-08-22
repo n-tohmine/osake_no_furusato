@@ -21,38 +21,6 @@ ja:
       delete_confirm: '削除しますか？'
       not_authenticated: 'ログインしてください'
       not_authorized: '権限がありません'
-  admin: # controllers/adminに対応
-    user_sessions:
-      new:
-        title: 'ログイン'
-      create:
-        success: 'ログインしました'
-        fail: 'ログインに失敗しました'
-      destroy:
-        success: 'ログアウトしました'
-    user:
-      index:
-        title: 'ユーザー一覧'
-      show:
-        title: 'ユーザー詳細'
-      edit:
-        title: 'ユーザー編集'
-      destroy:
-        title: 'ユーザー削除'
-    breweries:
-      index:
-        title: '醸造所一覧'
-      new:
-        title: '醸造所作成'
-      show:
-        title: '醸造所詳細'
-      edit:
-        title: '醸造所編集'  
-      destroy:
-        title: '醸造所削除'  
-      likes:
-        title: 'お気に入り一覧'
-        no_likes: '⚠︎お気に入りの登録がありません。'
   users: # controllers/usersに対応
     index:
       title: 'ユーザー一覧'
