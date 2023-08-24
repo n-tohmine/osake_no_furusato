@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-12 mt-10 mx-10 pb-10">
       <% if @hotels["result"].present? %>
-        <%= render 'nearby_hotel', { brewery: @brewery, url: nearby_hotels_brewery_path(@brewery) } %>
+        <%= render 'breweries/nearby_hotel', { brewery: @brewery, url: nearby_hotels_brewery_path(@brewery) } %>
       <% else %>
         <p class="text-center text-lg bg-cyan-400">⚠︎該当する宿泊施設が見つかりませんでした。</p>       
       <% end %>
