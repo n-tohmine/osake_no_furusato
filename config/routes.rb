@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   root to: 'home#top'
   resources :breweries, only: %i[index show] do
-    get 'nearby_hotels', on: :member
+    get 'nearby_hotels', on: :member, to: 'nearby_hotels#index'
     resources :reviews, only: %i[create update destroy], shallow: true
     collection do
       get 'keeps'
