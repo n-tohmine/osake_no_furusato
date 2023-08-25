@@ -1,7 +1,10 @@
 <tr id="review-<%= review.id %>">
   <td class="text-gray-600 pb-4">
     <div class="flex flex-wrap mt-1 mb-1">
-      <h2 class="mr-4 font-bold">🍷<%= review.user.name %>さん</h2>
+      <%= image_tag review.user.avatar.url, size: '30x30', class: "bg-white" %>
+      <%= link_to user_path(review.user) do %>
+        <h2 class="mr-4 ml-1 font-bold text-blue-700">🍷<%= review.user.name %>さん</h2>
+      <% end %>
       <span><%= l review.created_at, format: :short %></span>
     </div>
     <div id="js-review-<%= review.id %>" class="ml-3">

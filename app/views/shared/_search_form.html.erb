@@ -9,7 +9,7 @@
         { class: "w-52 flex-none mt-8 mr-8 p-4 pl-10 text-base bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 cursor-pointer" }
       %>
 
-      <%= f.select :address_cont,
+      <%= f.select :prefecture_eq,
         Brewery.prefecture_enums.keys,{ include_blank: "都道府県"},
         { class: "w-52 flex-none mt-8 mr-8 p-4 pl-10 text-base bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 cursor-pointer" }
       %> 
