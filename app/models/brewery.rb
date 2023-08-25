@@ -1,4 +1,7 @@
+require_relative '../enums/prefecture'
+
 class Brewery < ApplicationRecord
+  include Prefecture
   has_many :keeps, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :reviews, dependent: :destroy

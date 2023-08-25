@@ -26,7 +26,7 @@
           <div class='mb-2 font-bold'>
             <%= f.label :living_place, User.human_attribute_name(:living_place) %>
           </div>
-          <%= f.select :living_place, User.living_places.keys, { include_blank: "未設定", selected: @user.living_place }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+          <%= f.select :living_place, User.prefecture_enums, { include_blank: "未設定", selected: @user.living_place }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
         </div>
         <div class='text-gray-700 text-sm mb-8'>
           <div class='mb-2 font-bold'>
