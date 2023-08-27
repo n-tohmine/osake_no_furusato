@@ -24,6 +24,7 @@ ja:
   users: # controllers/usersに対応
     index:
       title: 'ユーザー一覧'
+      no_result: 登録ユーザーが存在しません''
     new: # users/newアクションに対応
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'

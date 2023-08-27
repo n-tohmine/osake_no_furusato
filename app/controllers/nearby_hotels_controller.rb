@@ -1,4 +1,6 @@
 class NearbyHotelsController < ApplicationController
+  skip_before_action :require_login
+
   def index
     @brewery = Brewery.find(params[:id])
     hotels_search_service = HotelsSearchService.new(@brewery)
