@@ -13,6 +13,7 @@ require 'action_text/engine'
 require 'action_view/railtie'
 require 'action_cable/engine'
 require 'sprockets/railtie'
+require 'faker'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -24,7 +25,7 @@ module OsakeNoFurusato
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     # アプリケーションが対応している言語のホワイトリスト
-    config.i18n.available_locales = %i[ja]
+    config.i18n.available_locales = %i[ja en]
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
@@ -38,5 +39,6 @@ module OsakeNoFurusato
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    Faker::Config.locale
   end
 end

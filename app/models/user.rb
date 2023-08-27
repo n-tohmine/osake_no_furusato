@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_breweries, through: :likes, source: :brewery
 
-  validates :name, presence: true, uniqueness: true, length: { maximum: 255 }
+  validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
   validates :email, presence: true, uniqueness: true
   validates :self_introduction, length: { maximum: 300 }
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
   def index
-    @users = User.all
+    @users = User.all.order(id: :asc).page(params[:page]).per(12)
   end
 
   def show; end
