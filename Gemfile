@@ -73,6 +73,7 @@ gem 'kaminari-i18n'
 
 # Seeds
 gem 'seed-fu'
+gem 'faker'
 
 # admin
 gem 'activeadmin'
@@ -120,7 +121,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'faker'
   gem 'fuubar'
   gem 'simplecov', require: false
   gem 'webdrivers'
