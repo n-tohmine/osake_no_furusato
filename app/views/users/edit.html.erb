@@ -1,38 +1,43 @@
 <%= javascript_pack_tag 'preview_image' %>
 <% content_for :title, t('.title')%>
-<div class= 'flex flex-col items-center text-neutral-500 text-lg'>
+<div class= 'flex flex-col items-center'>
   <div class='w-full max-w-md'>
-    <div class='text-center my-8'>
+    <div class='text-center my-8 text-neutral-500 text-lg'>
       <h1><%= t('.title') %></h1>
     </div>
     <%= form_with model: @user, url: user_path, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <div class="mx-8 text-gray-700 text-sm font-bold">      
+      <div class="mx-8">
         <%= image_tag @user.avatar.url, id: "preview", size: "200x200", accept: "image/*", class: "inline mx-20 mb-4 rounded-md" %></br>
-        <div class='mb-2 font-bold'>
+      </div>
+      <div class="mx-8 mb-6 text-gray-700 text-sm font-bold">
+        <%= User.human_attribute_name(:name) %>：<%= @user.name %>
+      </div>
+      <div class="mx-8 text-gray-700 text-sm font-bold">
+        <div class='mb-2'>
           <%= f.label :avatar %>
+          <% if @user.avatar? %>
+            <label class="ml-4">
+              <%= f.check_box :remove_avatar %>
+              <%= t('.delete') %>
+            </label>
+          <% end %>
         </div>
-        <%= f.file_field :avatar, onchange: "previewImage()", class: "block w-full mb-2 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" %>
+        <%= f.file_field :avatar, onchange: "previewImage()", class: "block w-full mb-2 text-sm border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" %>
         <%= f.hidden_field :avatar_cache %>
-        <% if @user.avatar? %>
-          <label>
-            <%= f.check_box :remove_avatar %>
-            画像を削除する
-          </label>
-        <% end %>
       </div>
       <div class='flex flex-col justify-center flex-wrap mb-6 mx-8'>
-        <div class='text-gray-700 text-sm mt-6 mb-8'>
-          <div class='mb-2 font-bold'>
+        <div class='text-gray-700 text-sm mt-6 mb-8 font-bold'>
+          <div class='mb-2'>
             <%= f.label :living_place, User.human_attribute_name(:living_place) %>
           </div>
-          <%= f.select :living_place, User.prefecture_enums, { include_blank: "未設定", selected: @user.living_place }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+          <%= f.select :living_place, User.prefecture_enums, { include_blank: t('.not_selected'), selected: @user.living_place }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
         </div>
-        <div class='text-gray-700 text-sm mb-8'>
-          <div class='mb-2 font-bold'>
+        <div class='text-gray-700 text-sm mb-8 font-bold'>
+          <div class='mb-2'>
             <%= f.label :favorite_liquor_type, User.human_attribute_name(:favorite_liquor_type) %>
           </div>
-          <%= f.select :favorite_liquor_type, User.favorite_liquor_types.keys.map { |k| [I18n.t("enums.user.favorite_liquor_type.#{k}"), k] }, { include_blank: "未設定", selected: @user.favorite_liquor_type }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+          <%= f.select :favorite_liquor_type, User.favorite_liquor_types.keys.map { |k| [I18n.t("enums.user.favorite_liquor_type.#{k}"), k] }, { include_blank: t('.not_selected'), selected: @user.favorite_liquor_type }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
         </div>
         <div class='text-gray-700 text-sm mb-8'>
           <div class='mb-2 font-bold'>
