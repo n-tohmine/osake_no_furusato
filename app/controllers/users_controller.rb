@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :require_user_ownership, only: %i[edit update destroy]
   skip_before_action :require_login, only: %i[new create]
 
   def index
@@ -55,5 +56,12 @@ class UsersController < ApplicationController
 
   def user_profile_params
     params.require(:user).permit(:avatar, :avatar_cache, :remove_avatar, :living_place, :favorite_liquor_type, :self_introduction)
+  end
+
+  def require_user_ownership
+    return if @user.id == current_user.id
+
+    redirect_back_or_to root_path, danger: t('defaults.message.not_authorized')
+    nil
   end
 end
