@@ -7,8 +7,8 @@
     </div>
     <%= form_with model: @user, url: user_path, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <div class="mx-8">
-        <%= image_tag @user.avatar.url, id: "preview", size: "200x200", accept: "image/*", class: "inline mx-20 mb-4 rounded-md" %></br>
+      <div class="flex justify-center"> 
+        <%= image_tag @user.avatar.url, id: "preview", size: "200x200", accept: "image/*", class: "inline mb-4 rounded-md" %></br>
       </div>
       <div class="mx-8 mb-6 text-gray-700 text-sm font-bold">
         <%= User.human_attribute_name(:name) %>：<%= @user.name %>
