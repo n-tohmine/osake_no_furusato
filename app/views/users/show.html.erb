@@ -4,26 +4,24 @@
     <%= image_tag "#{@user.avatar}", size: "200x200", class: "rounded-lg bg-white" %>
   </div>
   <% if current_user == @user %>
-    <div class="text-center text-base font-bold pt-2 text-blue-700">
+    <div class="text-center text-base font-bold py-4 text-blue-700">
       <%= link_to t('.edit'), edit_user_path %>
     </div>
   <% end %>
-  <div class="overflow-x-auto grid grid-cols-5 md:grid-cols-6">
-    <table class="col-start-2 col-span-3 md:col-start-3 md:col-span-2 w-full mt-3 mb-8 text-base md:text-lg text-gray-600">
+  <div class="overflow-x-auto grid grid-cols-8 md:grid-cols-10">
+    <table class="col-start-2 col-span-6 md:col-start-4 md:col-span-4 w-full mt-3 mb-8 text-base md:text-lg text-gray-600">
       <tbody>
         <tr class="bg-violet-200">
-          <th scope="row" class="w-8 py-4 px-6 text-right whitespace-nowrap"><%= User.human_attribute_name :name %>:</th>
-          <td class="w-100 text-left"><%= @user.name %></td>
+          <th scope="row" class="w-8 py-4 px-3 text-right whitespace-nowrap"><%= User.human_attribute_name :name %>:</th>
+          <td class="text-left whitespace-nowrap pr-5"><%= @user.name %></td>
         </tr>
         <tr class="bg-gray-200">
-          <th scope="row" class="w-8 py-4 px-6 text-right whitespace-nowrap"><%= User.human_attribute_name :living_place %>:</th>
-          <td class="w-100 text-left"><%= User.prefecture_enums.key(@user.living_place) %></td>
+          <th scope="row" class="w-8 py-4 px-3 text-right whitespace-nowrap"><%= User.human_attribute_name :living_place %>:</th>
+          <td class="text-left whitespace-nowrap pr-5"><%= User.prefecture_enums.key(@user.living_place) %></td>
         </tr>
         <tr class="bg-violet-200">
-          <th scope="row" class="w-8 py-4 px-6 text-right whitespace-nowrap">
-            <%= User.human_attribute_name :favorite_liquor_type %>:
-          </th>
-          <td class="w-100 text-left"><%= @user.favorite_liquor_type_i18n %></td>
+          <th scope="row" class="w-8 py-4 px-3 text-right whitespace-nowrap"><%= User.human_attribute_name :favorite_liquor_type %>:</th>
+          <td class="text-left whitespace-nowrap pr-5"><%= @user.favorite_liquor_type_i18n %></td>
         </tr>
       </tbody>
     </table>
