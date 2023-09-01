@@ -1,7 +1,7 @@
 require 'aws-sdk-s3'
 
 SitemapGenerator::Sitemap.default_host = 'https://www.osake-no-furusato.jp/'
-SitemapGenerator::Sitemap.sitemaps_host = "http://s3-ap-northeast-1.amazonaws.com/#{Rails.application.credentials[:aws][:S3_sitemap_bucket_name]}/sitemaps/sitemap.xml.gz"
+SitemapGenerator::Sitemap.sitemaps_host = "https://#{Rails.application.credentials[:aws][:S3_sitemap_bucket_name]}.s3.ap-northeast-1.amazonaws.com/sitemap.xml.gz"
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(Rails.application.credentials[:aws][:S3_sitemap_bucket_name],
                                                                         aws_access_key_id: Rails.application.credentials[:aws][:access_key_id],
                                                                         aws_secret_access_key: Rails.application.credentials[:aws][:secret_access_key],
