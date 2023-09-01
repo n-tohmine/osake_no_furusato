@@ -42,6 +42,7 @@ gem 'rails-i18n'
 # SEO
 gem 'meta-tags'
 gem 'sitemap_generator'
+gem 'whenever', require: false
 
 # Configuration
 gem 'config'

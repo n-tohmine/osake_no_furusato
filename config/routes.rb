@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
+  get '/sitemap', to: redirect("https://s3-ap-northeast-1.amazonaws.com/#{Rails.application.credentials[:aws][:S3_sitemap_bucket_name]}/sitemaps/sitemap.xml.gz")
   root to: 'home#top'
   resources :breweries, only: %i[index show] do
     get 'nearby_hotels', on: :member, to: 'nearby_hotels#index'
