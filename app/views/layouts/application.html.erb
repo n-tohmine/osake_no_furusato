@@ -8,7 +8,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-ZJ8741QWQN');
     </script>
 
@@ -22,6 +21,7 @@
     <%= javascript_pack_tag 'application' %>
     <link href="../../assets/stylesheets/search_from_japanmap.scss" rel="stylesheet" type="text/scss">
     <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.min.css" />
+    <%= display_meta_tags(default_meta_tags) %>
   </head>
 
   <body class="flex flex-col min-h-screen">
