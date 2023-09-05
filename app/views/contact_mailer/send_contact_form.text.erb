@@ -1,0 +1,12 @@
+◆お酒のふるさと<%= t('defaults.contact_form') %>◆
+【　<%= @contact.name %> 様からお問い合わせがありました。　】
+  <%= Contact.human_attribute_name('name') %>：<%= @contact.name %> 様
+  <%= Contact.human_attribute_name('email') %>：<%= @contact.email %>
+  <%= Contact.human_attribute_name('content') %>：
+  <%= @contact.content %>
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+発行元　お酒のふるさと
+お問い合わせ　<%= "#{Rails.application.credentials[:mailer]}" %>
+ウェブサイト　https://www.osake-no-furusato.jp
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

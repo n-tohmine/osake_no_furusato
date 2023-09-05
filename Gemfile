@@ -87,6 +87,9 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-byebug'
 
+  # Check N+1
+  gem 'bullet'
+
   # Testing framework and related
   gem 'factory_bot_rails'
   gem 'rspec-rails'
@@ -110,8 +113,6 @@ group :development do
   gem 'spring'
   # For easily check schema and routing info
   gem 'annotate'
-  # Check N+1
-  gem 'bullet'
   # Lint check, code analyze
   gem 'rails_best_practices'
   gem 'rubocop', require: false

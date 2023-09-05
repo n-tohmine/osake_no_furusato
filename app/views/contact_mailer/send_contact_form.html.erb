@@ -1,0 +1,16 @@
+<p>◆お酒のふるさと<%= t('defaults.contact_form') %>◆<p>
+<p>【　<%= @contact.name %> 様からお問い合わせがありました。　】</p>
+<ul>
+  <li><%= Contact.human_attribute_name('name') %>：<%= @contact.name %> 様</li>
+  <li><%= Contact.human_attribute_name('email') %>：<%= mail_to @contact.email %></li>
+  <li><%= Contact.human_attribute_name('content') %>：</li>
+    <%= @contact.content %>
+</ul>
+
+<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+<p>発行元　お酒のふるさと</p>
+<p>お問い合わせ　<%= mail_to "#{Rails.application.credentials[:mailer]}" %></p>
+<p>ウェブサイト　<%= link_to "https://www.osake-no-furusato.jp","https://www.osake-no-furusato.jp"%></p>
+<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+
+
