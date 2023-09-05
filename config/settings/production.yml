@@ -1,2 +1,2 @@
 default_url_options:
-  host: 'osake-no-furusato.jp'
+  { protocol: 'https', host: 'osake-no-furusato.jp' }
