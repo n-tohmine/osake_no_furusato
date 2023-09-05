@@ -81,6 +81,11 @@ ja:
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワード変更に失敗しました'
+  contacts:
+    new:
+      title: 'お問い合わせフォーム'
+    confirm:
+      title: 'お問い合わせ確認フォーム'
   time:
     formats:
       default: '%Y/%m/%d %H:%M'

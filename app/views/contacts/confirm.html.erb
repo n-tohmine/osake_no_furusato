@@ -1,0 +1,34 @@
+<% content_for :title, t('.title') %>
+<div class= 'flex flex-col items-center'>
+  <div class='w-full max-w-md h-full'>
+    <div class='text-center my-4'>
+      <h1 class="text-neutral-500 text-lg"><%= t('.title') %></h1>
+    </div>
+    
+    <%= form_with model: @contact, url: contacts_done_path, local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class='flex flex-col justify-center mt-8 mb-6 mx-8'>
+        <div class='mt-4'>
+          <%= f.hidden_field :name %>
+          <p class="block mb-2 text-sm font-bold text-gray-900"><%= Contact.human_attribute_name('name')%></p>
+          <%= @contact.name %> 
+        </div>
+        <div class='mt-4'>
+          <%= f.hidden_field :email %>
+          <p class="block mb-2 text-sm font-bold text-gray-900"><%= Contact.human_attribute_name('email') %></p>
+          <%= @contact.email %> 
+        </div>
+        <div class='mt-4'>
+          <%= f.hidden_field :content %>
+          <p class="block mb-2 text-sm font-bold text-gray-900"><%= Contact.human_attribute_name('content') %></p>
+          <%= @contact.content %>
+        </div>
+      </div>
+      <div class="flex justify-center my-8">
+        <%= f.submit (t 'defaults.back'), name: 'back', class: "text-white bg-gradient-to-r from-stone-500 via-stone-600 to-stone-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 text-center tracking-widest mr-16 mb-2 cursor-pointer" %>
+
+        <%= f.submit (t 'defaults.post'), class: "text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 text-center tracking-widest mr-2 mb-2 cursor-pointer" %>
+      </div>
+    <% end %>
+  </div>
+</div>
