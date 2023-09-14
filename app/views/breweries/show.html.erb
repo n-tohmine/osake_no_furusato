@@ -67,14 +67,11 @@
 
   <!-- レビューエリア -->
   <h2 class="text-xl font-semibold text-center leading-8 text-white bg-blue-400 lg:mx-20 md:mx-0 mt-6 mb-4">みんなのレビュー</h2>
-  <% if @reviews.present? %>
-    <%= render 'reviews/reviews', { reviews: @reviews } %>
-    <div class="mb-4 text-gray-500 font-bold">
-      <%= paginate @reviews %>
-    </div>
-  <% else %>
-    <p class="text-gray-600 text-center text-lg my-6">⚠︎レビューがまだありません。</p>
-  <% end %>
+  <%= render 'reviews/reviews', { reviews: @reviews } %>
+  <div class="mb-4 text-gray-500 font-bold">
+    <%= paginate @reviews %>
+  </div>
+
   <!-- レビューフォーム -->
   <% if logged_in? %>
     <%= render 'reviews/form', { brewery: @brewery, review: @review } %>
