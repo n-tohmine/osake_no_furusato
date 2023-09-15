@@ -22,7 +22,7 @@ ActiveAdmin.register User do
       if f.object.avatar.present?
         f.input :remove_avatar, as: :boolean, required: false, label: '画像を削除する'
       end
-      f.input :living_place
+      f.input :living_place, as: :select, collection: User.prefecture_enums
       f.input :favorite_liquor_type
       f.input :self_introduction
       f.input :role
@@ -39,7 +39,9 @@ ActiveAdmin.register User do
       row :avatar do
         image_tag(user.avatar.url, style: 'max-width: 200px;')
       end
-      row :living_place
+      row :living_place do
+        User.prefecture_enums.key(user.living_place)
+      end
       row :favorite_liquor_type
       row :self_introduction
       row :role

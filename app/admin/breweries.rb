@@ -8,9 +8,9 @@ ActiveAdmin.register Brewery do
   #
   # or
   #
-  # permit_params do
-  #   permitted = [:name, :address, :phone_number, :prefecture, :liquor_type, :website_url, :photo_reference, :video_id, :latitude, :longitude, :place_id, :image]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params do
+    permitted = %i[name address phone_number prefecture liquor_type website_url photo_reference video_id latitude longitude place_id image]
+    permitted << :other if params[:action] == 'create' && current_user.admin?
+    permitted
+  end
 end

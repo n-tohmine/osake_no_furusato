@@ -2,6 +2,18 @@ $("#error_messages").remove();
 <% if @review.errors.present? %>
   $("#new_review").prepend("<%= j(render('shared/error_messages', object: @review)) %>");
 <% else %>
-  $("#js-reviews").prepend("<%= j(render('reviews/review', review: @review)) %>");
+  $("#js-table-review").prepend("<%= j(render('reviews/review', review: @review)) %>");
   $("#js-new-review-body").val('');
+  
+  let reviewId = <%= @review.id %>;
+  let reviewOpt = {
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    scoreName: `review[${reviewId}][star]`,
+    score: <%= @review.star %>,
+    readOnly: true,
+    half: true
+  };
+  window.raty(document.querySelector(`#raty-${reviewId}`), reviewOpt);
 <% end %>

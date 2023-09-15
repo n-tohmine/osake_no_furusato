@@ -7,8 +7,25 @@
       <% end %>
       <span><%= l review.created_at, format: :short %></span>
     </div>
+    <div id="raty-<%= review.id %>" class="raty-container flex flex-row, ml-3">
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        let showRateElement = document.querySelector('#raty-<%= review.id %>');
+        let showOpt = {
+          starOn: "<%= asset_path('star-on.png') %>",
+          starOff: "<%= asset_path('star-off.png') %>",
+          starHalf: "<%= asset_path('star-half.png') %>",
+          scoreName: 'review[star]',
+          score: "<%= review.star %>",
+          readOnly: true,
+          half: true
+        };
+        window.raty(showRateElement, showOpt);
+        });
+      </script>
+    </div>
     <div id="js-review-<%= review.id %>" class="ml-3">
-      <p><%= simple_format review.content %></p>
+      <p><%= simple_format(review.content) %></p>
     </div>
     <%# 編集・削除ボタン %>
     <% if current_user&&current_user.own?(review) %>

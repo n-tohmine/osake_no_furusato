@@ -34,43 +34,43 @@ $(function() {
           $button.prop("disabled", false);
         });
   })
-  //更新用設定
-  function submitReview(content, reviewId) {
-    return new Promise(function(resolve, reject) {
-      $.ajax({
-        type: 'PATCH',
-        url: '/reviews/' + reviewId,
-        data: {
-          review: {
-            content: content,
-            "authenticity_token": $("#authenticity_token").val()
-            },
-        },
-        headers: {
-          'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
-        },
-        }).done(function (result) {
-            resolve(result)
-        }).fail(function (result) {
-            reject(result)
-        });
-    })
-}
+    //更新用設定
+    function submitReview(content, reviewId) {
+      return new Promise(function(resolve, reject) {
+          $.ajax({
+              type: 'PATCH',
+              url: '/reviews/' + reviewId,
+              data: {
+                  review: {
+                      content: content,
+                      "authenticity_token": $("#authenticity_token").val()
+                  },
+              },
+              headers: {
+                'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
+              },
+          }).done(function (result) {
+              resolve(result)
+          }).fail(function (result) {
+              reject(result)
+          });
+      })
+  }
   //編集フォームを隠す
   function switchToLabel(reviewId) {
-    $("#js-textarea-review-box-" + reviewId).hide()
-    $("#js-review-" + reviewId).show()
+      $("#js-textarea-review-box-" + reviewId).hide()
+      $("#js-review-" + reviewId).show()
   }
   //編集フォーム表示
   function switchToEdit(reviewId) {
-    $("#js-review-" + reviewId).hide()
-    $("#js-textarea-review-box-" + reviewId).show()
+      $("#js-review-" + reviewId).hide()
+      $("#js-textarea-review-box-" + reviewId).show()
   }
   //エラーメッセージ表示
   function showErrorMessages(reviewId, messages) {
-    $('<p class="error_messages text-danger">' + messages.join('<br>') + '</p>').insertBefore($("#js-textarea-review-" + reviewId))
+      $('<p class="error_messages text-danger">' + messages.join('<br>') + '</p>').insertBefore($("#js-textarea-review-" + reviewId))
   }
-  //エラーメッセージ削除
+   //エラーメッセージ削除
   function clearErrorMessages() {
     $("p.error_messages").remove()
   }

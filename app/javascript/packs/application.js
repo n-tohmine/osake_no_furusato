@@ -14,7 +14,13 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "stylesheets/application.scss"
 // import "flowbite"
-import '@fortawesome/fontawesome-free/js/all';
+import '@fortawesome/fontawesome-free/js/all'
+import Raty from "./raty.js";
+window.raty = function(element,opt) {
+  let raty =  new Raty(element,opt)
+  raty.init();
+  return raty;
+};
 
 Rails.start()
 ActiveStorage.start()
