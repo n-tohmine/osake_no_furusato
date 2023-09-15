@@ -53,4 +53,21 @@ ActiveAdmin.register User do
       row :access_count_to_reset_password_page
     end
   end
+
+  index do
+    selectable_column
+    column :id
+    column :name
+    column :email
+    column :avatar do |user|
+      image_tag(user.avatar.url, style: 'max-width: 50px;')
+    end
+    column :living_place do |user|
+      User.prefecture_enums.key(user.living_place)
+    end
+    column :favorite_liquor_type
+    column :self_introduction
+    column :role
+    actions 
+  end
 end
