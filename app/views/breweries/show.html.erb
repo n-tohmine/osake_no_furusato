@@ -76,6 +76,8 @@
   <% if logged_in? %>
     <%= render 'reviews/form', { brewery: @brewery, review: @review } %>
   <% else %>
-    <p class="text-center text-gray-600 pt-4 pb-8 font-bold text-lg">ログインしてレビューを投稿しましょう📝</p>
+    <div class="text-center text-blue-700 pt-4 pb-8 font-bold text-lg">
+      <%= link_to "ログインしてレビューを投稿しましょう📝", login_path %>
+    </div>
   <% end %>
 </div>

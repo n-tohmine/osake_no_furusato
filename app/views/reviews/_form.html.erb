@@ -2,6 +2,23 @@
   <div class="grid grid-cols-6">
     <% render 'shared/error_messages', object: f.object %>
     <div class="col-start-2 col-span-4">
+      <div id="stars" class="flex flex-row">
+        <%= f.label :star, class: "text-gray-700 mx-2"%>
+        <%= f.hidden_field :star %>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          let element = document.querySelector('#stars');
+          let opt = {
+            starOn: "<%= asset_path('star-on.png') %>",
+            starOff: "<%= asset_path('star-off.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            scoreName: 'review[star]',
+            half: true
+        };
+        window.raty(element, opt);
+        });
+      </script>
       <%= f.text_area :content, placeholder: "レビューを入力してください",id: 'js-new-review-body', class: 'text-gray-600 bg-gray-50 rounded-lg w-full h-36 my-4 border-gray-400 focus:ring-blue-500 focus:border-blue-500' %></br>
     </div>
   </div>

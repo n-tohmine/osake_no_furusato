@@ -1,14 +1,11 @@
 FactoryBot.define do
   factory :brewery do
-    name { 'MyString' }
-    address { 'MyString' }
-    phone_number { 1 }
-    prefecture { 'MyString' }
-    liquor_type { 1 }
-    website_url { 'MyString' }
-    image { 'MyString' }
-    video_id { 'MyString' }
-    latitude { 1.5 }
-    longitude { 1.5 }
+    name { "テストブルワリー" }
+    address { Faker::Address.full_address }
+    phone_number { "000-000-0000" }
+    prefecture { Faker::Address.state }
+    liquor_type { 0 }
+    latitude { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
   end
 end

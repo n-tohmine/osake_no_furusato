@@ -23,10 +23,10 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content).merge(brewery_id: params[:brewery_id])
+    params.require(:review).permit(:content, :star).merge(brewery_id: params[:brewery_id])
   end
 
   def review_update_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, :star)
   end
 end

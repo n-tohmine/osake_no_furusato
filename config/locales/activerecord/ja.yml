@@ -46,6 +46,7 @@ ja:
         updated_at: '更新日時'
       review:
         content: 'レビュー'
+        star: '評価'
   date:
     formats:
       default: "%Y/%m/%d"
