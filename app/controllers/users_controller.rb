@@ -40,8 +40,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.detroy
-    redirect_to login_path, success: '削除しました'
+    @user.destroy
+    redirect_to root_path, success: t('defaults.message.deleted', item: 'アカウント')
   end
 
   private
