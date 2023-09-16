@@ -1,13 +1,13 @@
 ja:
   defaults:
     login: 'ログイン'
-    register: '登録'
     logout: 'ログアウト'
+    register: '登録'
     edit: '編集'
-    update: '更新する'
     show: '詳細'
     delete: '削除'
-    password_reset: 'パスワードリセット'
+    update: '更新'
+    cancel: 'キャンセル'
     search_word: '検索ワード'
     unspecified: '指定なし'
     post: '送信'
@@ -18,14 +18,14 @@ ja:
       updated: '%{item}を更新しました'
       not_updated: '%{item}を更新できませんでした'
       deleted: '%{item}を削除しました'
-      delete_confirm: '削除しますか？'
-      not_authenticated: 'ログインしてください'
+      delete_confirm: '%{item}を削除しますか？'
       not_authorized: '権限がありません'
+      admin_only: '管理者専用ページです'
   users: # controllers/usersに対応
     index:
       title: 'ユーザー一覧'
-      no_result: 登録ユーザーが存在しません''
-    new: # users/newアクションに対応
+      no_result: '登録ユーザーが存在しません'
+    new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
     create:
@@ -35,14 +35,14 @@ ja:
       edit: 'プロフィールを編集する'
     edit:
       title: 'プロフィール編集'
-      delete: '画像を削除する'
+      delete_avatar: '画像を削除する'
       not_selected: '未設定'
+      account: 'アカウント'
+      delete_account: 'アカウントを削除する'
     update:
-      success: 'プロフィールを更新しました'
-      fail: 'プロフィールの更新に失敗しました'
+      profile: 'プロフィール'
   user_sessions:
     new:
-      require_login: 'ログインしてください'
       title: 'ログイン'
       to_register_page: '新規ユーザー登録'
       password_forget: 'パスワードをお忘れの方はこちら'
@@ -67,17 +67,13 @@ ja:
     create:
       success: 'レビューを投稿しました'
       fail: 'レビューの投稿に失敗しました'
-    destroy: 
-      success: 'レビューを削除しました'
   password_resets:
     new:
       title: 'パスワードリセット申請'
-      submit: '送信'
     create:
       success: 'パスワードリセット手順を送信しました'
     edit:
       title: 'パスワードリセット'
-      submit: '送信'
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワード変更に失敗しました'

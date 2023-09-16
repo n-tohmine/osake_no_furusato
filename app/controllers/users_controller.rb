@@ -32,9 +32,9 @@ class UsersController < ApplicationController
     end
 
     if @user.update(user_profile_params)
-      redirect_to user_path(@user), success: t('.success')
+      redirect_to user_path(@user), success: t('defaults.message.updated', item: t('.profile'))
     else
-      flash.now[:danger] = t('.fail')
+      flash.now[:danger] = t('defaults.message.not_updated', item: t('.profile'))
       render :edit
     end
   end

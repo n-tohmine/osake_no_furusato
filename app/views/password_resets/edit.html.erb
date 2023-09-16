@@ -14,14 +14,14 @@
         </div>
         <div class='mt-4'>
           <%= f.label :password, class: "text-sm font-bold text-gray-900" %>
-          <%= f.password_field :password, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", required: "", id: "user_password" %>
+          <%= f.password_field :password, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
         </div>
         <div class='mt-4'>
           <%= f.label :password_confirmation, class: "text-sm font-bold text-gray-900" %>
-          <%= f.password_field :password_confirmation, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 mb-8 focus:border-blue-500 block w-full p-2.5", required: "", id: "user_password" %>
+          <%= f.password_field :password_confirmation, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 mb-8 focus:border-blue-500 block w-full p-2.5" %>
         </div>
         <div class='actions text-center'>
-          <%= f.submit (t '.submit'), class: "text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 text-center tracking-widest mr-2 mb-4 cursor-pointer" %>
+          <%= f.submit (t 'defaults.post'), class: "text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 text-center tracking-widest mr-2 mb-4 cursor-pointer" %>
         </div>
       <% end %>
     </div>
