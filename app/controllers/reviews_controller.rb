@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.find(params[:id])
     @brewery = @review.brewery
     @review.destroy!
-    redirect_to brewery_path(@brewery), success: t('.success')
+    redirect_to brewery_path(@brewery), success: t('defaults.message.deleted', item: 'レビュー')
   end
 
   private

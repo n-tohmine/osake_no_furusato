@@ -36,7 +36,7 @@
           </a>
         </li>
         <li>
-          <%= link_to review_path(review), method: :delete, data: { confirm: 'レビューを削除しますか？'} do %>
+          <%= link_to review_path(review), method: :delete, data: { confirm: t('defaults.message.delete_confirm', item: 'レビュー')} do %>
             <i class="fa-solid fa-trash"></i>
           <% end %>
         </li>
@@ -45,8 +45,8 @@
     <%# 編集フォーム %>
     <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
       <textarea id="js-textarea-review-<%= review.id %>" class="bg-gray-50 rounded-lg w-full h-24 border-gray-400 focus:ring-blue-500 focus:border-blue-500"><%= review.content %></textarea></br>
-      <button class="js-button-review-update text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 border-2 border-blue-700 rounded mr-3" data-review-id="<%= review.id %>">更新</button>
-      <button class="js-button-edit-review-cancel text-sm bg-gray-500 hover:bg-gray-700 text-white py-1 px-2 border-2 border-gray-700 rounded" data-review-id="<%= review.id %>">キャンセル</button>
+      <button class="js-button-review-update text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 border-2 border-blue-700 rounded mr-3" data-review-id="<%= review.id %>"><%= t('defaults.update') %></button>
+      <button class="js-button-edit-review-cancel text-sm bg-gray-500 hover:bg-gray-700 text-white py-1 px-2 border-2 border-gray-700 rounded" data-review-id="<%= review.id %>"><%= t('defaults.cancel') %></button>
     </div>
   </td>
 <tr>

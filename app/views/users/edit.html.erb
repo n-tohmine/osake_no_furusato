@@ -7,7 +7,7 @@
     <%= form_with model: @user, url: user_path, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="flex justify-center"> 
-        <%= image_tag @user.avatar.url, id: "preview", size: "200x200", accept: "image/*", class: "inline mb-4 rounded-md" %></br>
+        <%= image_tag @user.avatar.url, id: "preview", size: "150x150", accept: "image/*", class: "inline mb-4 rounded-md" %></br>
       </div>
       <div class="mx-8 mb-6 text-gray-700 text-sm font-bold">
         <%= User.human_attribute_name(:name) %>：<%= @user.name %>
@@ -18,7 +18,7 @@
           <% if @user.avatar? %>
             <label class="ml-4">
               <%= f.check_box :remove_avatar %>
-              <%= t('.delete') %>
+              <%= t('.delete_avatar') %>
             </label>
           <% end %>
         </div>
@@ -45,7 +45,7 @@
           <%= f.text_area :self_introduction, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 mb-1 h-40", placeholder: @user.self_introduction %>
         </div>
         <%= f.submit t('defaults.update'), class: "text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 text-center tracking-widest mr-2 mb-4 cursor-pointer" %>
-        <%= link_to "アカウントを削除", user_path(current_user), method: :delete, data: { confirm: t('defaults.message.delete_confirm', item: "アカウント") }, class: "text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 my-10 text-center tracking-widest mr-2 mb-4 cursor-pointer" %>
+        <%= link_to t('.delete_account'), user_path(current_user), method: :delete, data: { confirm: t('defaults.message.delete_confirm', item: t('.account')) }, class: "text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 my-10 text-center tracking-widest mr-2 mb-4 cursor-pointer" %>
       </div>
     <% end %>
   </div>

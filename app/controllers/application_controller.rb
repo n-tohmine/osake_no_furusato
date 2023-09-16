@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   add_flash_types :success
 
   def not_authenticated
-    redirect_to login_path, alert: 'ログインしてください'
+    redirect_to login_path, alert: t('defaults.message.require_login')
   end
 
   def access_denied(_exception)
-    redirect_to root_path, alert: '管理者専用ページです'
+    redirect_to root_path, alert: t('defaults.message.admin_only')
   end
 end

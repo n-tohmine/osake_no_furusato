@@ -1,7 +1,7 @@
 <% content_for :title, "#{@user.name}さんのプロフィール" %>
 <div class="bg-lime-100 min-h-screen">
   <div class="flex md:flex-row md:max-w-full items-center justify-center pt-12 mx-10">
-    <%= image_tag "#{@user.avatar}", size: "200x200", class: "rounded-lg bg-white" %>
+    <%= image_tag "#{@user.avatar}", size: "150x150", class: "rounded-lg bg-white" %>
   </div>
   <% if current_user == @user %>
     <div class="text-center text-base font-bold py-4 text-blue-700">
