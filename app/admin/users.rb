@@ -68,6 +68,6 @@ ActiveAdmin.register User do
     column :favorite_liquor_type
     column :self_introduction
     column :role
-    actions 
+    actions
   end
 end

@@ -23,6 +23,7 @@ Metrics/BlockLength:
     - 'Gemfile'
     - 'config/**/*'
     - 'spec/**/*_spec.rb'
+    - 'app/**/*users.rb'
 
 Metrics/ClassLength:
   CountComments: false

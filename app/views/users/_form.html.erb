@@ -3,19 +3,19 @@
   <div class='flex flex-col justify-center mt-8 mb-6 mx-8'>
     <div class='mt-4'>
       <%= f.label :name, class: "block mb-2 text-sm font-bold text-gray-900" %>
-      <%= f.text_field :name, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "酒蔵　巡子", required: "", id: 'user_name' %> 
+      <%= f.text_field :name, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "酒蔵　巡子" %> 
     </div>
     <div class='mt-4'>
       <%= f.label :email, class: "block mb-2 text-sm font-bold text-gray-900" %>
-      <%= f.email_field :email, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "osake_no_furusato@example.com", required: "", id: 'user_email' %> 
+      <%= f.email_field :email, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "osake_no_furusato@example.com" %> 
     </div>
     <div class='mt-4'>
       <%= f.label :password, class: "block mb-2 text-sm font-bold text-gray-900" %>
-      <%= f.password_field :password, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "••••••••••", required: "", id: 'user_password' %> 
+      <%= f.password_field :password, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "••••••••••" %> 
     </div>
     <div class='mt-4'>
       <%= f.label :password_confirmation, class:"block mb-2 text-sm font-bold text-gray-900" %>
-      <%= f.password_field :password_confirmation, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-8", placeholder: "••••••••••", required: "", id: 'user_password_confirmation' %> 
+      <%= f.password_field :password_confirmation, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-8", placeholder: "••••••••••" %> 
     </div>
     <%= f.submit (t 'defaults.register'), class: "text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 text-center tracking-widest mr-2 mb-2 cursor-pointer" %>
   </div>
