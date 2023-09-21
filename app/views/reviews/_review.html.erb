@@ -1,50 +1,54 @@
 <tr id="review-<%= review.id %>">
   <td class="text-gray-600 pb-4">
     <div class="flex flex-wrap mt-1 mb-1">
-      <%= image_tag review.user.avatar.url, size: '30x30', class: "bg-white" %>
+      <%= image_tag review.user.avatar.url, size: '30x30', class: "bg-white rounded-full" %>
       <%= link_to user_path(review.user) do %>
         <h2 class="mr-4 ml-1 font-bold text-blue-700">🍷<%= review.user.name %>さん</h2>
       <% end %>
       <span><%= l review.created_at, format: :short %></span>
     </div>
-    <div id="raty-<%= review.id %>" class="raty-container flex flex-row, ml-3">
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        let showRateElement = document.querySelector('#raty-<%= review.id %>');
-        let showOpt = {
-          starOn: "<%= asset_path('star-on.png') %>",
-          starOff: "<%= asset_path('star-off.png') %>",
-          starHalf: "<%= asset_path('star-half.png') %>",
-          scoreName: 'review[star]',
-          score: "<%= review.star %>",
-          readOnly: true,
-          half: true
-        };
-        window.raty(showRateElement, showOpt);
-        });
-      </script>
-    </div>
-    <div id="js-review-<%= review.id %>" class="ml-3">
-      <p><%= simple_format(review.content) %></p>
+    <div class="ml-10">
+      <div id="raty-<%= review.id %>" class="raty-container flex flex-row mb-2">
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+          let showRateElement = document.querySelector('#raty-<%= review.id %>');
+          let showOpt = {
+            starOn: "<%= asset_path('star-on.png') %>",
+            starOff: "<%= asset_path('star-off.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            scoreName: 'review[star]',
+            score: "<%= review.star %>",
+            readOnly: true,
+            half: true
+          };
+          window.raty(showRateElement, showOpt);
+          });
+        </script>
+      </div>
+      <div id="js-review-<%= review.id %>">
+        <p><%= simple_format(review.content) %></p>
+      </div>
     </div>
     <%# 編集・削除ボタン %>
-    <% if current_user&&current_user.own?(review) %>
-      <ul class="flex">
-        <li class="mx-4">
-          <a href="#" data-review-id="<%= review.id %>" class="js-edit-review-button">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </a>
-        </li>
-        <li>
-          <%= link_to review_path(review), method: :delete, data: { confirm: t('defaults.message.delete_confirm', item: 'レビュー')} do %>
-            <i class="fa-solid fa-trash"></i>
-          <% end %>
-        </li>
-      </ul>
-    <% end %>
+    <div class="ml-10 mt-2">
+      <% if current_user&&current_user.own?(review) %>
+        <ul class="flex">
+          <li class="mr-4">
+            <a href="#" data-review-id="<%= review.id %>" class="js-edit-review-button">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+          </li>
+          <li id="delete_review_button">
+            <%= link_to review_path(review), method: :delete, data: { confirm: t('defaults.message.delete_confirm', item: 'レビュー')} do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
     <%# 編集フォーム %>
-    <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
-      <textarea id="js-textarea-review-<%= review.id %>" class="bg-gray-50 rounded-lg w-full h-24 border-gray-400 focus:ring-blue-500 focus:border-blue-500"><%= review.content %></textarea></br>
+    <div id="js-textarea-review-box-<%= review.id %>" class="ml-8" style="display: none;">
+      <textarea id="js-textarea-review-<%= review.id %>" class="bg-gray-50 rounded-lg w-full h-28 border-gray-400 focus:ring-blue-500 focus:border-blue-500"><%= review.content %></textarea></br>
       <button class="js-button-review-update text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 border-2 border-blue-700 rounded mr-3" data-review-id="<%= review.id %>"><%= t('defaults.update') %></button>
       <button class="js-button-edit-review-cancel text-sm bg-gray-500 hover:bg-gray-700 text-white py-1 px-2 border-2 border-gray-700 rounded" data-review-id="<%= review.id %>"><%= t('defaults.cancel') %></button>
     </div>

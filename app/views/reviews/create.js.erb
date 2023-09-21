@@ -4,16 +4,17 @@ $("#error_messages").remove();
 <% else %>
   $("#js-table-review").prepend("<%= j(render('reviews/review', review: @review)) %>");
   $("#js-new-review-body").val('');
-  
-  let reviewId = <%= @review.id %>;
-  let reviewOpt = {
+  (function() {
+  var newReviewId = <%= @review.id %>;
+  var newReviewOpt = {
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
-    scoreName: `review[${reviewId}][star]`,
+    scoreName: `review[${newReviewId}][star]`,
     score: <%= @review.star %>,
     readOnly: true,
     half: true
   };
-  window.raty(document.querySelector(`#raty-${reviewId}`), reviewOpt);
+  window.raty(document.querySelector(`#raty-${newReviewId}`), newReviewOpt);
+  })();
 <% end %>

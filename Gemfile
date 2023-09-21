@@ -125,7 +125,7 @@ group :test do
   gem 'capybara'
   gem 'fuubar'
   gem 'simplecov', require: false
-  gem 'webdrivers'
+  gem 'webdrivers', '~> 5.0', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

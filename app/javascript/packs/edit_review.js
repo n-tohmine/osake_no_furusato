@@ -2,14 +2,14 @@ $(function() {
   //編集押下
   $(document).on("click", '.js-edit-review-button', function(e) {
     e.preventDefault();
-    const reviewId = $(this).data("review-id")
-    switchToEdit(reviewId)
+    const editReviewId = $(this).data("review-id")
+    switchToEdit(editReviewId)
   })
   //キャンセル押下
   $(document).on("click", '.js-button-edit-review-cancel', function() {
     clearErrorMessages()
-    const reviewId = $(this).data("review-id")
-    switchToLabel(reviewId)
+    const editReviewId = $(this).data("review-id")
+    switchToLabel(editReviewId)
   })
   //更新押下
   $(document).on("click", '.js-button-review-update', function(event) {
@@ -19,27 +19,27 @@ $(function() {
     }
     $button.prop("disabled", true); 
     clearErrorMessages()
-      const reviewId = $button.data("review-id")
-      submitReview($("#js-textarea-review-" + reviewId).val(), reviewId)
+      const editReviewId = $button.data("review-id")
+      submitReview($("#js-textarea-review-" + editReviewId).val(), editReviewId)
         .then(result => {
             $("#js-review-" + result.review.id).html(result.review.content.replace(/\r?\n/g, '<br>'))
             switchToLabel(result.review.id)
         })
         .catch(result => {
-            const reviewId = result.responseJSON.review.id
+            const editReviewId = result.responseJSON.review.id
             const messages = result.responseJSON.errors.messages
-            showErrorMessages(reviewId, messages)
+            showErrorMessages(editReviewId, messages)
         })
         .finally(() => {
           $button.prop("disabled", false);
         });
   })
     //更新用設定
-    function submitReview(content, reviewId) {
+    function submitReview(content, editReviewId) {
       return new Promise(function(resolve, reject) {
           $.ajax({
               type: 'PATCH',
-              url: '/reviews/' + reviewId,
+              url: '/reviews/' + editReviewId,
               data: {
                   review: {
                       content: content,
@@ -57,18 +57,18 @@ $(function() {
       })
   }
   //編集フォームを隠す
-  function switchToLabel(reviewId) {
-      $("#js-textarea-review-box-" + reviewId).hide()
-      $("#js-review-" + reviewId).show()
+  function switchToLabel(editReviewId) {
+      $("#js-textarea-review-box-" + editReviewId).hide()
+      $("#js-review-" + editReviewId).show()
   }
   //編集フォーム表示
-  function switchToEdit(reviewId) {
-      $("#js-review-" + reviewId).hide()
-      $("#js-textarea-review-box-" + reviewId).show()
+  function switchToEdit(editReviewId) {
+      $("#js-review-" + editReviewId).hide()
+      $("#js-textarea-review-box-" + editReviewId).show()
   }
   //エラーメッセージ表示
-  function showErrorMessages(reviewId, messages) {
-      $('<p class="error_messages text-danger">' + messages.join('<br>') + '</p>').insertBefore($("#js-textarea-review-" + reviewId))
+  function showErrorMessages(editReviewId, messages) {
+      $('<p class="error_messages text-danger">' + messages.join('<br>') + '</p>').insertBefore($("#js-textarea-review-" + editReviewId))
   }
    //エラーメッセージ削除
   function clearErrorMessages() {

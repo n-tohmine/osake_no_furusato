@@ -13,7 +13,7 @@
     <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
       <ul class="flex flex-col p-2 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium md:border-0 text-right">
         <li>
-          <%= link_to "醸造所検索", breweries_path, class:"inline-block text-white hover:bg-stone-500 hover:text-white px-3 py-2 rounded-md text-sm font-bold" %>
+          <%= link_to "醸造所検索", breweries_path, id: 'brewery-search-button',class:"inline-block text-white hover:bg-stone-500 hover:text-white px-3 py-2 rounded-md text-sm font-bold" %>
         </li>
         <li>
           <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-white hover:bg-stone-500 hover:text-white px-3 py-2 rounded-md text-sm font-bold">

@@ -1,7 +1,7 @@
 <% content_for :title, t('.title') %>
 <div class= 'flex flex-col items-center text-neutral-500 text-lg'>
   <div class='w-full max-w-md'>
-    <div class='text-center mt-8'>
+    <div id= 'login-page' class='text-center mt-8'>
       <h1><%= t('.title') %></h1>
     </div>
     <%= form_with url: login_path, local: true do |f| %>
@@ -24,7 +24,7 @@
     <div class="flex flex-col justify-center items-center md:flex-row">
       <div class='text-center text-base'>
         <%= link_to (t '.to_register_page'), new_user_path, class: "mr-6 inline-flex h-10" %>
-        <%= link_to (t '.password_forget'), new_password_reset_path, class: "inline-flex h-10" %>
+        <%= link_to (t '.password_forget'), new_password_reset_path, id: 'password_forget', class: "inline-flex h-10" %>
       </div>
     </div>
   </div>
