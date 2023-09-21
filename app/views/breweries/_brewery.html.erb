@@ -1,6 +1,6 @@
 <%= link_to brewery_path(brewery) do %>
   <div class="flex">
-    <div class="flex w-full flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full mx-10 md:mx-48 mb-6 hover:bg-gray-100">
+    <div id= "brewery-<%= brewery.id %>" class="flex w-full flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-full mx-10 md:mx-48 mb-6 hover:bg-gray-100">
       <% if brewery.image %>
         <%= image_tag "#{brewery.image}", class: "object-cover w-full h-56 rounded-t-lg md:h-40 md:w-48 md:rounded-none md:rounded-l-lg" %>
       <% else %>

@@ -1,6 +1,8 @@
 FactoryBot.define do
   factory :review do
-    content { "テストレビューの作成・投稿" }
-    star { 3.5 }
+    content { "テストレビュー投稿。テストブルワリー。" }
+    star { 5.0 }
+    user { association :user }
+    brewery { association :brewery }
   end
 end
