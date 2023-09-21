@@ -4,7 +4,7 @@
     <div class='text-center my-8 text-neutral-500 text-lg'>
       <h1><%= t('.title') %></h1>
     </div>
-    <%= form_with model: @user, url: user_path, local: true do |f| %>
+    <%= form_with model: @user, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="flex justify-center"> 
         <%= image_tag @user.avatar.url, id: "preview", size: "150x150", accept: "image/*", class: "inline mb-4 rounded-md" %></br>
