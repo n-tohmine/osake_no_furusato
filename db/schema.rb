@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_09_08_051347) do
+ActiveRecord::Schema.define(version: 2023_09_21_054825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2023_09_08_051347) do
   end
 
   create_table "breweries", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "address"
     t.string "phone_number"
     t.string "prefecture"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2023_09_08_051347) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "place_id"
     t.string "image"
+    t.index ["name", "address"], name: "index_breweries_on_name_and_address", unique: true
   end
 
   create_table "keeps", force: :cascade do |t|
