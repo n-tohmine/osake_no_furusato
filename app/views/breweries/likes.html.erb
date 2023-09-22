@@ -8,7 +8,7 @@
   <% else %>
     <p class="text-center text-lg text-gray-700 bg-cyan-400"><%= t('.no_likes') %></p> 
   <% end %>
-  <div class="pb-8 text-gray-500 font-bold">
-    <%= paginate @like_breweries %>
+  <div class="pb-8">
+    <%= paginate @like_breweries, window:2 %>
   </div>
 </div>
