@@ -37,7 +37,7 @@
           <%= Brewery.human_attribute_name :website_url %>:
           </th>
           <% if @brewery.website_url %>
-          <td><%= link_to @brewery.website_url, "#{@brewery.website_url}" %></td>
+          <td><%= link_to @brewery.website_url, "#{@brewery.website_url}", target: :_blank, rel: "noopener noreferrer" %></td>
           <% else %>
           <td>不明</td>
           <% end %>
