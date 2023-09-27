@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/sitemap', to: redirect("https://#{Rails.application.credentials[:aws][:S3_sitemap_bucket_name]}.s3.ap-northeast-1.amazonaws.com/sitemap.xml.gz")
 
   root to: 'home#top'
+  get 'privacy_policy', to: 'home#privacy_policy'
+  get 'terms_of_service', to: 'home#terms_of_service'
   resources :breweries, only: %i[index show] do
     get 'nearby_hotels', on: :member, to: 'nearby_hotels#index'
     resources :reviews, only: %i[create update destroy], shallow: true
