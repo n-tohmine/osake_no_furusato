@@ -21,7 +21,12 @@ ja:
       delete_confirm: '%{item}を削除しますか？'
       not_authorized: '権限がありません'
       admin_only: '管理者専用ページです'
-  users: # controllers/usersに対応
+  home:
+    privacy_policy:
+      title: 'プライバシーポリシー'
+    terms_of_service:
+      title: '利用規約'
+  users:
     index:
       title: 'ユーザー一覧'
       no_result: '登録ユーザーが存在しません'

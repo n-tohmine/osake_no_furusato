@@ -47,8 +47,8 @@
       <% end %>
     </div>
     <%# 編集フォーム %>
-    <div id="js-textarea-review-box-<%= review.id %>" class="ml-8" style="display: none;">
-      <textarea id="js-textarea-review-<%= review.id %>" class="bg-gray-50 rounded-lg w-full h-28 border-gray-400 focus:ring-blue-500 focus:border-blue-500"><%= review.content %></textarea></br>
+    <div id="js-textarea-review-box-<%= review.id %>" class="w-full ml-8" style="display: none;">
+      <textarea id="js-textarea-review-<%= review.id %>" class="bg-gray-50 rounded-lg h-28 w-full border-gray-400 focus:ring-blue-500 focus:border-blue-500"><%= review.content %></textarea></br>
       <button class="js-button-review-update text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 border-2 border-blue-700 rounded mr-3" data-review-id="<%= review.id %>"><%= t('defaults.update') %></button>
       <button class="js-button-edit-review-cancel text-sm bg-gray-500 hover:bg-gray-700 text-white py-1 px-2 border-2 border-gray-700 rounded" data-review-id="<%= review.id %>"><%= t('defaults.cancel') %></button>
     </div>
