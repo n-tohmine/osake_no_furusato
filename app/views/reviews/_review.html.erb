@@ -3,9 +3,10 @@
     <div class="flex flex-wrap mt-1 mb-1">
       <%= image_tag review.user.avatar.url, size: '30x30', class: "bg-white rounded-full" %>
       <%= link_to user_path(review.user) do %>
-        <h2 class="mr-4 ml-1 font-bold text-blue-700">🍷<%= review.user.name %>さん</h2>
+        <h2 class="ml-1 font-bold text-blue-700">🍷<%= review.user.name %>さん</h2>
       <% end %>
-      <span><%= l review.created_at, format: :short %></span>
+      <span class="ml-10"><%= l review.created_at, format: :short %></span>
+      <span class="ml-10">訪問時期：<%= review.visit_date ? review.visit_date.strftime("%Y年%m月") : "不明" %>
     </div>
     <div class="ml-10">
       <div id="raty-<%= review.id %>" class="raty-container flex flex-row mb-2">

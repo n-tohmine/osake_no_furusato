@@ -47,6 +47,7 @@ ja:
       review:
         content: 'レビュー'
         star: '評価'
+        visit_date: '訪問時期'
   date:
     formats:
       default: "%Y/%m/%d"
