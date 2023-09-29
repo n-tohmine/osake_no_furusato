@@ -46,6 +46,9 @@ ja:
       delete_account: 'アカウントを削除する'
     update:
       profile: 'プロフィール'
+    reviews:
+      title: 'レビュー一覧'
+      no_reviews: '⚠︎レビューの投稿がありません'   
   user_sessions:
     new:
       title: 'ログイン'

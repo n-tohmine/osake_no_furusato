@@ -16,7 +16,11 @@ Rails.application.routes.draw do
   end
   resources :keeps, only: %i[create destroy]
   resources :likes, only: %i[create destroy]
-  resources :users
+  resources :users do
+    collection do
+      get 'reviews'
+    end
+  end
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
