@@ -1,0 +1,43 @@
+<% content_for :title, t('.title') %>
+<div class="bg-lime-100 min-h-screen">
+  <div class="py-12 mb-4 text-center text-gray-600 text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold">
+    <i class="fa-solid fa-pen mr-2"></i><%= t('.title') %>
+  </div>
+  <% if @reviews.present? %>
+    <% @reviews.each do |review| %>
+      <div class="grid grid-cols-8">
+        <div class="col-start-2 col-span-6 md:col-start-3 md:col-span-4">
+          <table class="table-auto">
+            <div class= "text-gray-700 pb-4 mb-4 border-b-2 border-dashed border-green-600 ">
+              ◆ 投稿日：<%= l review.created_at, format: :short %></br>
+              <%= link_to review.brewery.name, brewery_path(review.brewery), class: "text-blue-700" %></br>
+              <div id="raty-<%= review.id %>" class="raty-container flex flex-row mt-1 mb-2">
+                <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                  let showRateElement = document.querySelector('#raty-<%= review.id %>');
+                  let showOpt = {
+                    starOn: "<%= asset_path('star-on.png') %>",
+                    starOff: "<%= asset_path('star-off.png') %>",
+                    starHalf: "<%= asset_path('star-half.png') %>",
+                    scoreName: 'review[star]',
+                    score: "<%= review.star %>",
+                    readOnly: true,
+                    half: true
+                  };
+                  window.raty(showRateElement, showOpt);
+                  });
+                </script>
+              </div>
+              <%= review.content %></br>
+            </div>
+          </table>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="text-center text-lg text-gray-700 bg-cyan-400"><%= t('.no_reviews') %></p> 
+  <% end %>
+  <div class="pb-8">
+    <%= paginate @reviews, window:2 %>
+  </div> 
+</div>

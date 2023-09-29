@@ -44,6 +44,10 @@ class UsersController < ApplicationController
     redirect_to root_path, success: t('defaults.message.deleted', item: 'アカウント')
   end
 
+  def reviews
+    @reviews = current_user.reviews.includes(:brewery).order(created_at: :desc).page(params[:page]).per(5)
+  end
+
   private
 
   def set_user

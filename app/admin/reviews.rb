@@ -14,8 +14,17 @@ ActiveAdmin.register Review do
   # or
   #
   permit_params do
-    permitted = %i[content star brewery_id user_id]
+    permitted = %i[content star visit_date brewery_id user_id]
     permitted << :other if params[:action] == 'create' && current_user.admin?
     permitted
+  end
+
+  form do |f|
+    f.inputs 'Review Details' do
+      f.input :content
+      f.input :star
+      f.input :visit_date, as: :date_select, start_year: 2000, end_year: Time.now.year
+    end
+    f.actions
   end
 end

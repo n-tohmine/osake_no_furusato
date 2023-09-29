@@ -3,7 +3,6 @@
     <%= link_to root_path do %>
       <%= image_tag 'header_logo.png', size:'300x200', class: "rounded-lg w-40 md:w-72" %>
     <% end %>
-
     <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-100 rounded-lg md:hidden hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-dropdown" id="hamburger-icon" aria-expanded="false">
       <span class="sr-only">Open main menu</span>
       <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -13,22 +12,33 @@
     <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
       <ul class="flex flex-col p-2 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium md:border-0 text-right">
         <li>
-          <%= link_to "醸造所検索", breweries_path, id: 'brewery-search-button',class:"inline-block text-white hover:bg-stone-500 hover:text-white px-3 py-2 rounded-md text-sm font-bold" %>
+          <%= link_to breweries_path, id: 'brewery-search-button',class:"inline-block text-white hover:bg-stone-500 hover:text-white px-3 py-2 rounded-md text-sm font-bold" do %>
+            <i class="fa-solid fa-magnifying-glass mr-1"></i>醸造所検索
+          <% end %>
         </li>
         <li>
-          <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-white hover:bg-stone-500 hover:text-white px-3 py-2 rounded-md text-sm font-bold">
-          マイページ
-          </button>
+          <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-white hover:bg-stone-500 hover:text-white px-3 py-2 rounded-md text-sm font-bold">マイページ</button>
           <div id="dropdownNavbar" class="z-10 hidden bg-gray-600 divide-y divide-gray-100 rounded-lg shadow w-44 text-left">
             <ul class="py-2 text-sm" aria-labelledby="dropdownLargeButton">
               <li>
-                <%= link_to "プロフィール", user_path(current_user), class:"block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm" %>
+                <%= link_to user_path(current_user), class:"block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm" do %>
+                  <i class="fa-solid fa-user mr-2"></i>プロフィール
+                <% end %>
               </li>
               <li>
-                <%= link_to "お気に入り一覧", likes_breweries_path, class:"block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm" %>
+                <%= link_to likes_breweries_path, class:"block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm" do %>
+                  <i class="mr-2 fa-solid fa-heart"></i>お気に入り一覧
+                <% end %>
               </li>
-                <li>
-                <%= link_to "気になる一覧", keeps_breweries_path, class:"block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm" %>
+              <li>
+                <%= link_to keeps_breweries_path, class:"block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm" do %>
+                  <i class="mr-2 fa-solid fa-star"></i>気になる一覧
+                <% end %>
+              </li>
+              <li>
+                <%= link_to reviews_users_path, class:"block text-white hover:bg-stone-500  hover:text-white px-3 py-2 rounded-md text-sm" do %>
+                  <i class="fa-solid fa-pen mr-2"></i> レビュー一覧
+                <% end %>
               </li>
             </ul>
           </div>
