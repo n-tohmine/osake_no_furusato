@@ -11,7 +11,7 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: 'お酒のふるさと',
-      title: 'お酒の工場見学検索アプリ',
+      title: 'お酒の工場見学検索アプリ - お酒のふるさと',
       reverse: true,
       charset: 'utf-8',
       separator: '|',
